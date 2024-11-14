@@ -19,3 +19,9 @@
 <ins>los Profesores y TAs</ins>:
 - Betty Kretlow (lectura)
 - Vinesh Babu Yaganti (lab)
+
+
+
+
+August 2024 - May 2028
+Agosto 2024 - Mayo 2028
