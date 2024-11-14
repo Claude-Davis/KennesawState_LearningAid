@@ -9,6 +9,9 @@
 - Vinesh Babu Yaganti (lab)
 
 
+---
+
+
 ## El Propósito del Repositorio
   Este repositorio contiene las tareas y ejemplos de mis cursos de programación en Kennesaw State University (KSU).
   El objetivo del repositorio es ayudarse a aprender como usar los diferentes lenguajes de progamación que estudio en KSU.
