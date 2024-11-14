@@ -23,7 +23,13 @@
 
 ---
 
+## Format of File Names
+  Assignment_Name-Module-Key_Features
 
-August 2024 - May 2028
+  Tarea_Nombre-Módulo-Características_Clave
 
-Agosto 2024 - Mayo 2028
+
+
+
+
+<sub>August 2024 - May 2028 | Agosto 2024 - Mayo 2028</sub>
