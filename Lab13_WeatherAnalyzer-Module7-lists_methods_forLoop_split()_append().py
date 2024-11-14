@@ -1,8 +1,9 @@
 # Course CSE 1321
 # Section: BB
 # Semester: Fall 2024
+# Name: Starlan Davis
 
-# Prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1321l_python/labs/cse1321l_lab13.pdf
+
 
 #print("Lab.13. - Weather Analyzer")
 
