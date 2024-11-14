@@ -1,7 +1,8 @@
 # Course CSE 1321
 # Section: BB
 # Semester: Fall 2024
-# Name: Starlan Davis
+
+# prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1321l_python/assignments/cse1321l_assignment7_v2_fall24.pdf
 
 #print("Assignment.7. - Library System with Borrow Limits")
 
