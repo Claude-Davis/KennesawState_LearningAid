@@ -2,7 +2,7 @@
 # Section: BB
 # Semester: Fall 2024
 
-# prompt: file:///C:/Users/claud/AppData/Local/Temp/MicrosoftEdgeDownloads/d6305e02-206a-4459-96c5-bb6016d202da/lab11-sequence-types.pdf
+# prompt: https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.kennesaw.edu%2Fccse%2Ffirst-year-experience%2Fcse1321l_python%2Flabs%2Flab11-sequence-types.docx&wdOrigin=BROWSELINK
 
 #print("Lab.11.A. - All Math, All the Time")
 
