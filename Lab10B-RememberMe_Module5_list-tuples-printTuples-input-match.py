@@ -2,7 +2,7 @@
 # Section: BB
 # Semester: Fall 2024
 
-# prompt: file:///C:/Users/claud/AppData/Local/Temp/MicrosoftEdgeDownloads/df576507-c4d3-417b-9962-086c41f8cb0e/lab10-sequence-types.pdf
+# prompt: https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.kennesaw.edu%2Fccse%2Ffirst-year-experience%2Fcse1321l_python%2Flabs%2Flab10-sequence-types.docx&wdOrigin=BROWSELINK
 
 #print("Lab.10.B. - Remember Me")
 

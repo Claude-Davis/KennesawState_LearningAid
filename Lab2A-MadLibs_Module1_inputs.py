@@ -3,7 +3,7 @@
 # Section: BB
 # Semester: Fall 2024
 
-# prompt: file:///C:/Users/claud/AppData/Local/Temp/MicrosoftEdgeDownloads/f0d85ea3-1619-4037-8f40-070d8ed4ebcb/m2-lab-2-type-systems-v1.1.pdf
+# prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1321l_python/labs/m2-lab-2-type-systems-v1.1.docx
 
 #print("Lab.2.A. - MadLibs")
 
