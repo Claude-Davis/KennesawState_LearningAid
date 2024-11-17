@@ -6,14 +6,15 @@
 
 #print("Lab.11.A. - All Math, All the Time")
 
-def allMath():
+def allMath():   # when called, this method will perform a series of math equations
     addition = num1 + num2
     subtraction = num1 - num2
     multiplication = num1 * num2
-    if num2 == 0:
-        division = None
-        floor_division = None
-        modulus = None
+    if num2 == 0:  # the user's second int input is a 0...
+        division = None  # "None" is saved to division
+        floor_division = None   # "None" is saved to floor division
+        modulus = None    # "None" is saved to modulus
+    # these variables are given the value "None", because a number divided by 0 would otherwise evoke an error. 
     else:
         division = num1 / num2
         floor_division = num1 // num2
