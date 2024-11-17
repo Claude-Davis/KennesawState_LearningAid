@@ -20,7 +20,7 @@ num_of_legs = input("How many legs does your chair have?: ")
 rolling = input("Is your chair rolling (true/false)?: ")
 material = input("What is your chair made of?: ")
 
-c1 = Chair(num_of_legs, rolling, material)  
+c1 = Chair(num_of_legs, rolling, material)   # this line saves the class "Chair" and all of its original attributes as "c1" 
 
 if rolling:
     roll = "rolling"
@@ -31,4 +31,4 @@ print("Your chair has", num_of_legs, "legs,", "is",rolling, "and is made of", ma
 
 print("This program is going to change that.")
 
-print("Your chair has", c1.num_of_legs, "legs,", "is", c1.rolling, "and is made of", c1.material + ".")  # this line prints the class's original attributes
+print("Your chair has", c1.num_of_legs, "legs,", "is", c1.rolling, "and is made of", c1.material + ".")  # this line prints the class's original attributes (because of "c1.")
