@@ -51,7 +51,7 @@ while code_run:
         case "3":
             for email in email_list:
                 print(email)
-                print(" ")
+            print(" ")
 
             options()
             select_option = input("Please make your selection: ")
