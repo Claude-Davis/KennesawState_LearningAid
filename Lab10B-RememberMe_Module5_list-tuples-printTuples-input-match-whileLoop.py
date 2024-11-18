@@ -37,7 +37,7 @@ while run_program: # this while loop only works while the value for "run_program
         
         case "2":
             for friend in friend_list:
-                print(f"{friend[0]}, {friend[1]}")   # this line prints 
+                print(f"{friend[0]}, {friend[1]}")   # this line prints the content of the "friend_tuple" that are located in the "friend_list"
                     # "friend[0]" accesses the content in the first index of the tuple and "friend[1]" accesses the content in the second index of the tuple
                     # the "f" indicates an f-string which allows for the insertion of variablses directly into the string
             print(" ")
