@@ -7,7 +7,7 @@
 #print("Lab.12.A. - Having A Seat")
 
 
-class Chair():
+class Chair:
     def __init__(self,num_of_legs,rolling,material):
         self.num_of_legs = 4
         self.rolling = False
