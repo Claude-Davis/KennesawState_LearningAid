@@ -28,9 +28,9 @@
 ---
 
 ## Format of File Names
-  Assignment_Name-Module-Key_Features
+  Assignment_Name-Module#-Key_Features
 
-  Tarea_Nombre-Módulo-Características_Clave
+  Tarea_Nombre-Módulo#-Características_Clave
 
 
 ## 
