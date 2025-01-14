@@ -11,7 +11,7 @@
 
 import java.util.Scanner; //imports the class Scanner to allow for user input
 
-public class Lab01 {
+public class BudgetSystem {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);  // creates an object of the class Scanner saved as "scan"
 
