@@ -5,8 +5,10 @@
   The **purpose** of the repository is to serve as a guide / learning tool / reference to aid in learning how to program in the different languages that I study at KSU.
 
 <ins>Professors and TAs</ins>:
-- Betty Kretlow (lecture)
-- Vinesh Babu Yaganti (lab)
+- Betty Kretlow (lecture - Fall 2024)
+- Vinesh Babu Yaganti (lab - Fall 2024)
+- Eun Sik Kim (lecture - Spring 2025)
+- Tarun Teja Pokala (lab - Spring 2025)
 
 
 ---
@@ -17,8 +19,10 @@
   El **objetivo** del repositorio es ayudarse a aprender como usar los diferentes lenguajes de progamación que estudio en KSU.
 
 <ins>los Profesores y TAs</ins>:
-- Betty Kretlow (lectura)
-- Vinesh Babu Yaganti (lab)
+- Betty Kretlow (lectura - Otoño 2024)
+- Vinesh Babu Yaganti (lab - Otoño 2024)
+- Eun Sik Kim (lectura - Primavera 2025)
+- Tarun Teja Pokala (lab - Primavera 2025)
 
 
 ---
