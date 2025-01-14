@@ -9,6 +9,8 @@
     boolean variables
   */
 
+// prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-1-v1.pdf
+
 import java.util.Scanner; //imports the class Scanner to allow for user input
 
 public class BudgetSystem {
