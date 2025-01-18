@@ -10,6 +10,8 @@
 - Eun Sik Kim (lecture - Spring 2025)
 - Tarun Teja Pokala (lab - Spring 2025)
 
+🍁 Fall 2024 : Python
+🍀 Spring 2025 : Java, C#
 
 ---
 
@@ -24,6 +26,8 @@
 - Eun Sik Kim (lectura - Primavera 2025)
 - Tarun Teja Pokala (lab - Primavera 2025)
 
+🍁 Otoño 2024 : Python
+🍀 Primavera 2025 : Java, C#
 
 ---
 
