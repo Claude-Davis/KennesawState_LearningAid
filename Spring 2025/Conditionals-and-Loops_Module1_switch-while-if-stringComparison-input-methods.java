@@ -1,3 +1,5 @@
+//prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/cse-1322l-lab-2-v1.pdf
+
 import java.util.Scanner;
 
 public class lab2 {
