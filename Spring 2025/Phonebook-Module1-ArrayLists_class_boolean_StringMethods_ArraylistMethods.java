@@ -4,6 +4,8 @@
         .equals()  //checks if a variable is the same/matches another variable's value or specified string
 */
 
+//prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-3-v1.pdf
+
 import java.util.Scanner;
 import java.util.ArrayList; //imports array lists from java package
 
