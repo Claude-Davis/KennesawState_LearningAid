@@ -1,3 +1,9 @@
+/*
+        String Methods Used:
+        .contains() //checks if a variable contains another string or character (specified or variable for user input)
+        .equals()  //checks if a variable is the same/matches another variable's value or specified string
+*/
+
 import java.util.Scanner;
 import java.util.ArrayList; //imports array lists from java package
 
