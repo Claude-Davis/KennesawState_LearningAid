@@ -28,7 +28,7 @@ class Contact {
 }
 
 //the main class
-public class Lab3{
+public class Phonebook{
     public static void main(String[] args){
         Scanner scan = new Scanner (System.in);
         ArrayList<Contact> allContacts = new ArrayList<>(); // creates an array list to hold the objects of the class "Contact"
