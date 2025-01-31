@@ -33,10 +33,10 @@
 
 ## Format of File Names
   Assignment_Name-Module#-Key_Features
-      * The key features allow for easier navigation through the files in case I want to look for something specific.
+      - The key features allow for easier navigation through the files in case I want to look for something specific.
 
   Tarea_Nombre-Módulo#-Características_Clave
-      (Las características clave permiten una navegación más fácil a través de los archivos en caso de que quiera buscar algo específico.)
+      - (Las características clave permiten una navegación más fácil a través de los archivos en caso de que quiera buscar algo específico.)
 
 
 ## 
