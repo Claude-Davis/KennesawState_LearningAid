@@ -1,3 +1,3 @@
-This folder serves as a my digital notebook for learning Kotlin.
+This folder serves as a digital notebook for learning Kotlin.
 
-The projects will primarily mirror the assignments I recieve from my professors.
+Many of projects saved here will mirror the assignments I recieve from my professors.
