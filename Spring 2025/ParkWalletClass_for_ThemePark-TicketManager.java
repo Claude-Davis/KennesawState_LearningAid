@@ -8,32 +8,48 @@ class ParkWallet{
         this.tickets = 0;
     }
 
-    //constructor w/ parameter
-    public ParkWallet(int balance){
-        this.tickets = balance;
-    }
+//
 
     //behavior
     public void addTickets(int additional){
         if (tickets >= 0){
-            tickets += additional;
+            this.tickets += additional;
         }
         else if (tickets < 0 ){
             System.out.println("No negative values.");
         }
     }
-
     //behavior
-    public boolean setTickets(){
-        return tickets > 0;
+    public void subtractTickets(int cost) {
+        this.tickets -= cost;
     }
 
-    //getter functions (allow for the private attributes to be accessed/modified outside of the file)
+//
+
+    //getter function (allow for the private attributes to be accessed/modified outside of the file)
     public int getTickets(){
         return tickets;
     }
+    //setter function
+    public int setTickets(int balance){
+        this.tickets = balance;
+        return tickets;
+    }
 
+//
+
+    //getter function
     public boolean getHoliday() {
+        return holiday;
+    }
+    //setter function
+    public boolean setHoliday(){
+        if (holiday) { // if holiday is true..
+            this.holiday = false;
+        }
+        else if (!holiday){  // if holiday is false
+            this.holiday = true;
+        }
         return holiday;
     }
 }
