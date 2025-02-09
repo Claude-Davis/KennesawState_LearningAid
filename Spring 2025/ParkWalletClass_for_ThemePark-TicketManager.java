@@ -1,3 +1,5 @@
+//prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-4.pdf
+
 class ParkWallet{
     //attributes
     private int tickets; //the absence of "static" allows each instance's value to be unique
