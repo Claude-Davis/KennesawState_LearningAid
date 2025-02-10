@@ -5,13 +5,14 @@ Classes:
     Classes in Separate Files:
         - TicketManager, ParkWallet (Module 3)
     Classes in 1 File:
-        - 
+        - Phonebook (Module 1)
 
 Getter / Setter Functions for Private Attributes:
     - TicketManager, ParkWallet (Module 3)
 
 Switch Statements:
     - SimpleMenu (Module 1)
+    - Phonebook (Module 1)
     - StoreManagement (Moduel 1)
     - TicketManager, ParkWallet (Module 3)
 
@@ -39,6 +40,7 @@ Boolean Conditions:
 Loops / Conditions:
     While:
         - SimpleMenu (Module 1)
+        - Phonebook (Module 1)
         - StoreManagement (Moduel 1)
         - TicketManager, ParkWallet (Module 3)
 
@@ -48,3 +50,12 @@ Loops / Conditions:
     If / If Else:
         - StoreManagement (Moduel 1)
         - TicketManager, ParkWallet (Module 3)
+
+String Methods:
+    .contains()
+        - Phonebook (Module 1)
+    .equals()
+        - Phonebook (Module 1)
+
+ArrayLists / Arrays:
+    - Phonebook (Module 1)
