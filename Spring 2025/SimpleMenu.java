@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class lab2 {
+public class SimpleMenu {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
@@ -40,7 +40,7 @@ public class lab2 {
                             break; //this prevents the program from automatically continuing to the next method
                     }
 
-                    options_list();
+                    options_list(); // calls the "options_list" method
                     System.out.print("Enter option: ");
                     option = scan.nextInt();        //removing the "int" allows for resuse of "option" redefining it
         }

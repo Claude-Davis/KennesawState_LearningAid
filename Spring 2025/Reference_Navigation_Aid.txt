@@ -11,11 +11,7 @@ Getter / Setter Functions for Private Attributes:
     - TicketManager, ParkWallet (Module 3)
 
 Switch Statements:
-    - StoreManagement (Moduel 1)
-    - TicketManager, ParkWallet (Module 3)
-
-Scanner Class / Input:
-    - BudgetSystem (Module 1)
+    - SimpleMenu (Module 1)
     - StoreManagement (Moduel 1)
     - TicketManager, ParkWallet (Module 3)
 
@@ -35,12 +31,14 @@ Logical Operators:
     - StoreManagement (Moduel 1)
 
 Boolean Conditions:
+    - SimpleMenu (Module 1)
     - BudgetSystem (Module 1)
     - StoreManagement (Moduel 1)
     - TicketManager, ParkWallet (Module 3)
 
 Loops / Conditions:
     While:
+        - SimpleMenu (Module 1)
         - StoreManagement (Moduel 1)
         - TicketManager, ParkWallet (Module 3)
 
