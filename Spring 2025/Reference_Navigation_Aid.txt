@@ -1,0 +1,40 @@
+//Format: <FileName> (Module)
+
+Classes:
+    Classes in Separate Files:
+        - 
+    Classes in 1 File:
+        - 
+
+Switch Statements:
+    - 
+
+Scanner Class / Input:
+    - BudgetSystem (Module 1)
+
+Mathematics:
+    Decimal Formatting:
+        - 
+
+    Exponentiation:
+        - BudgetSystem (Module 1)
+
+    Multiplication / Division / Addition / Subtraction:
+        - BudgetSystem (Module 1)
+
+
+Logical Operators:
+    - BudgetSystem (Module 1)
+
+Boolean Conditions:
+    - BudgetSystem (Module 1)
+
+Loops / Conditions:
+    While:
+        - 
+
+    For For Each:
+        - 
+
+    If / If Else:
+        - 
