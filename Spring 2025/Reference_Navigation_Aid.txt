@@ -1,16 +1,21 @@
 //Format: <FileName> (Module)
+//Format 2: <MainFileName>, <SeparateClassFileName> (Module)
 
 Classes:
     Classes in Separate Files:
-        - 
+        - TicketManager, ParkWallet (Module 3)
     Classes in 1 File:
         - 
 
+Getter / Setter Functions for Private Attributes:
+    - TicketManager, ParkWallet (Module 3)
+
 Switch Statements:
-    - 
+    - TicketManager, ParkWallet (Module 3)
 
 Scanner Class / Input:
     - BudgetSystem (Module 1)
+    - TicketManager, ParkWallet (Module 3)
 
 Mathematics:
     Decimal Formatting:
@@ -28,13 +33,14 @@ Logical Operators:
 
 Boolean Conditions:
     - BudgetSystem (Module 1)
+    - TicketManager, ParkWallet (Module 3)
 
 Loops / Conditions:
     While:
-        - 
+        - TicketManager, ParkWallet (Module 3)
 
     For For Each:
         - 
 
     If / If Else:
-        - 
+        - TicketManager, ParkWallet (Module 3)
