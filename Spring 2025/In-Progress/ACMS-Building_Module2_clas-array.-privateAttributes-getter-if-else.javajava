@@ -1,8 +1,9 @@
 //prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/assignments/cse-1322l-spring-2025-assignment-2-v1.1.pdf
+//used with Apartment Complex Management System (ApartmentManagement)
 
 import java.util.Arrays;
 
-class Building {
+class ACMS_Building {
     private Tenant[] apartments; //array of tenants
     private static double balance = 0;
     private static int nextId = 1;
