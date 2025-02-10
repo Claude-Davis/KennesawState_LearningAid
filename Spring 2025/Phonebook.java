@@ -9,7 +9,7 @@
 /* Pending updates:
         - case 4: search
                 - make the case irrelevant (code takes either lower or uppercase letters)
-        - case 4: seearch
+        - case 4: search
                 - fix error: currently only outputs the first match, should output all
 */
 
