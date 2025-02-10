@@ -1,6 +1,9 @@
-//Uses the file "ParkWallet.java"
+//Uses the ParkWallet class file
+
+//prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-4.pdf
 
 import java.util.Scanner;
+import java.util.ParkWallet;
 
 public class TicketManager {
     public static void main(String[] args) {

@@ -6,6 +6,13 @@
 
 //prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-3-v1.pdf
 
+/* Pending updates:
+        - case 4: search
+                - make the case irrelevant (code takes either lower or uppercase letters)
+        - case 4: seearch
+                - fix error: currently only outputs the first match, should output all
+*/
+
 import java.util.Scanner;
 import java.util.ArrayList; //imports array lists from java package
 
@@ -115,7 +122,7 @@ public class Phonebook{
                                 if (c.name.contains(key)){ //if the name includes the user's key...
                                     System.out.println("Name: " + c.name + " | " + c.phoneNum);
                                     break;
-                                } else if (false) {
+                                } else {
                                     System.out.println("No contacts contained the keyword.");
                                     break;
                                 }
