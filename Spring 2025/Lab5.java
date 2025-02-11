@@ -38,6 +38,10 @@ public class Lab5 {
                         System.out.println("Current balance of checking is $" + checkAcc.getAccountBalance());
                         break;
                     case 2:
+                            System.out.print("How much would you like to withdraw from Savings? ");
+                            double amountS = scan.nextDouble();
+
+                            System.out.print("Current balance of Savings is $" + saveAcc.getAccountBalance());
                         break;
                     case 3:
                         break;
