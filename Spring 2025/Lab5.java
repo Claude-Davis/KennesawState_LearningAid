@@ -35,23 +35,54 @@ public class Lab5 {
                         System.out.print("How much would you like to withdraw from checking? ");
                         double amountC = scan.nextDouble();
 
+                        checkAcc.withdraw(amountC);
+
                         System.out.println("Current balance of checking is $" + checkAcc.getAccountBalance());
                         break;
                     case 2:
-                            System.out.print("How much would you like to withdraw from Savings? ");
-                            double amountS = scan.nextDouble();
+                        System.out.print("How much would you like to withdraw from Savings? ");
+                        double amountS = scan.nextDouble();
 
-                            System.out.print("Current balance of Savings is $" + saveAcc.getAccountBalance());
+                        saveAcc.withdraw(amountS);
+
+                        System.out.println("Current balance of Savings is $" + saveAcc.getAccountBalance());
+                            
+                        System.out.println(" ");
                         break;
                     case 3:
+                        System.out.print("How much would you like to deposit to checking? ");
+                        double amount = scan.nextDouble();
+
+                        checkAcc.deposit(amount);
+
+                        System.out.println("Current balance of Checking is $" + checkAcc.getAccountBalance());
+
+                        System.out.println(" ");
                         break;
                     case 4:
+                        System.out.print("How much would you like to deposit to Savings? ");
+                        amountS = scan.nextDouble();
+
+                        saveAcc.deposit(amountS);
+
+                        System.out.println("Current balance of Savings is $" + saveAcc.getAccountBalance());
+
+                        System.out.println(" ");
                         break;
                     case 5:
+                        checkAcc.toString();
+
+                        System.out.println(" ");
                         break;
                     case 6:
+                        saveAcc.toString();
+
+                        System.out.println(" ");
                         break;
                     case 7:
+                        saveAcc.addInterest();
+
+                        System.out.println(" ");
                         break;
                 }
         }

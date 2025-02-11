@@ -20,8 +20,8 @@ class Account {
         return accountBalance;
     }
 
-    public double deposit(double z){
-        this.accountBalance += z;
+    public double deposit(double amount){
+        this.accountBalance += amount;
         return accountBalance;
     }
 
@@ -59,13 +59,13 @@ class Checking extends Account{
 
     @Override
     public String toString(){
-        return "Checking Account #" + accountNumber + ", balance $" + accountBalance;
+        return "Checking Account #" + getAccountNumber() + ", balance $" + getAccountBalance();
     }
 }
 
 
 //subclass "Savings"
-class Savings extends Account() {
+class Savings extends Account {
     private int numberOfDeposits = 0;
 
     public Savings(double accountBalance){
@@ -90,9 +90,8 @@ class Savings extends Account() {
         
         System.out.println("This is deposit " + numberOfDeposits + " to this account.");
         if (numberOfDeposits > 5) {
-            System.out.println("Charging a fee of $10.") {
-                accountBalance -= 10;
-            }
+            System.out.println("Charging a fee of $10.");
+            accountBalance -= 10;
         }
 
         return accountBalance;
@@ -108,6 +107,6 @@ class Savings extends Account() {
 
     @Override
     public String toString() {
-        return "Savings Account #" + accountNumber + ", balance $" + accountBalance;
+        return "Savings Account #" + getAccountNumber() + ", balance $" + getAccountBalance();
     }
 }
