@@ -9,13 +9,11 @@ public class Lab5 {
         Checking checkAcc = new Checking();
 
         //title
-        System.out.println("[]");
+        System.out.println("[Banking System]");
         System.out.println(" ");
 
         //initialize "option"
         int option = 0;
-
-        saveAcc.getAccountBalance() = 500;
 
         while (option != 8){
                 //menu
@@ -28,7 +26,10 @@ public class Lab5 {
                 System.out.println("7. Award Interest to Savings");
                 System.out.println("8. Quit");
 
+                System.out.print("Select Option: ");
                 option = scan.nextInt();
+
+                System.out.print(" ");
 
                 switch (option){
                     case 1:
@@ -38,6 +39,8 @@ public class Lab5 {
                         checkAcc.withdraw(amountC);
 
                         System.out.println("Current balance of checking is $" + checkAcc.getAccountBalance());
+
+                        System.out.println(" ");
                         break;
                     case 2:
                         System.out.print("How much would you like to withdraw from Savings? ");
@@ -50,7 +53,7 @@ public class Lab5 {
                         System.out.println(" ");
                         break;
                     case 3:
-                        System.out.print("How much would you like to deposit to checking? ");
+                        System.out.print("How much would you like to deposit to Checking? $");
                         double amount = scan.nextDouble();
 
                         checkAcc.deposit(amount);
@@ -60,7 +63,7 @@ public class Lab5 {
                         System.out.println(" ");
                         break;
                     case 4:
-                        System.out.print("How much would you like to deposit to Savings? ");
+                        System.out.print("How much would you like to deposit to Savings? $");
                         amountS = scan.nextDouble();
 
                         saveAcc.deposit(amountS);
@@ -80,7 +83,7 @@ public class Lab5 {
                         System.out.println(" ");
                         break;
                     case 7:
-                        saveAcc.addInterest();
+                        System.out.println("Current balance of Savings is $" + saveAcc.addInterest());
 
                         System.out.println(" ");
                         break;

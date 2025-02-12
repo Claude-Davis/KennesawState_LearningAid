@@ -9,14 +9,14 @@ class Account {
         this.accountBalance = 0;
     }
 
-    public Account(double x){
+    public Account(double balance){
         this.accountNumber = nextNumber;
         this.nextNumber++;
-        this.accountBalance = x;
+        this.accountBalance = balance;
     }
 
-    public double withdraw(double y){
-        this.accountBalance -= y;
+    public double withdraw(double amountA){
+        this.accountBalance -= amountA;
         return accountBalance;
     }
 
@@ -43,6 +43,10 @@ class Account {
 
 //subclass "Checking"
 class Checking extends Account{
+    public Checking(){
+        //
+    }
+
     public Checking(double accountBalance){
         //passes the argument to its superclass overloaded constructor
         super(accountBalance); //super() calls the parent class
@@ -52,6 +56,7 @@ class Checking extends Account{
     public double withdraw(double amountC) {
         double accountBalance = super.withdraw(amountC); //super. calls the parent class['s withdraw method]
         if (accountBalance < 0) {
+            System.out.println("Charging an overdraft fee of @20 because account is below $0.");
             accountBalance = super.withdraw(20);
         }
         return accountBalance;
@@ -67,6 +72,11 @@ class Checking extends Account{
 //subclass "Savings"
 class Savings extends Account {
     private int numberOfDeposits = 0;
+
+    public Savings(){
+        super(500); //starts the account at 500 | saves 500 ro the "balance" variable in the parent ("Account") class
+        this.numberOfDeposits = numberOfDeposits;
+    }
 
     public Savings(double accountBalance){
         //passes the argument to its superclass overloaded constructor
@@ -98,11 +108,9 @@ class Savings extends Account {
     }
 
     public double addInterest() {
-        double accountBalance;
-        double interest = 0.015 * accountBalance; //interest in 1.5%
+        double interest = 0.015 * getAccountBalance();
         System.out.println("Customer has earned $" + interest + " in interest.");
-        accountBalance += interest;
-        return accountBalance;
+        return deposit(interest);
     }
 
     @Override
