@@ -1,5 +1,7 @@
 //prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/assignments/cse-1322l-spring-2025-assignment-2-v1.1.pdf
 
+package Apartments_Management_System;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 

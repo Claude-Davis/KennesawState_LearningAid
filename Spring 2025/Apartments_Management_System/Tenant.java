@@ -1,6 +1,7 @@
 //prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/assignments/cse-1322l-spring-2025-assignment-2-v1.1.pdf
-//used with Apartment Complex Management System (ApartmentManagement)
+//used with Apartment Complex Management System 
 
+package Apartments_Management_System;
 
 class Tenant {
     //attributes
