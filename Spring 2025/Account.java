@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 class Account {
     private int accountNumber;
     private static int nextNumber = 10001;
@@ -56,7 +58,7 @@ class Checking extends Account{
     public double withdraw(double amountC) {
         double accountBalance = super.withdraw(amountC); //super. calls the parent class['s withdraw method]
         if (accountBalance < 0) {
-            System.out.println("Charging an overdraft fee of @20 because account is below $0.");
+            System.out.println("Charging an overdraft fee of $20 because account is below $0.");
             accountBalance = super.withdraw(20);
         }
         return accountBalance;
@@ -88,7 +90,7 @@ class Savings extends Account {
         double accountBalance = super.withdraw(amountS);  //super. calls the parent class['s withdraw method]
         if (accountBalance < 500) {
             System.out.println("Charging a fee of $10 because you are below $500.");
-            accountBalance -= 10;
+            accountBalance = super.withdraw(10);
         }
         return accountBalance;
     }
@@ -101,16 +103,18 @@ class Savings extends Account {
         System.out.println("This is deposit " + numberOfDeposits + " to this account.");
         if (numberOfDeposits > 5) {
             System.out.println("Charging a fee of $10.");
-            accountBalance -= 10;
+            accountBalance = super.withdraw(10);
         }
 
         return accountBalance;
     }
 
     public double addInterest() {
+        DecimalFormat df = new DecimalFormat("0.00");
+
         double interest = 0.015 * getAccountBalance();
-        System.out.println("Customer has earned $" + interest + " in interest.");
-        return deposit(interest);
+        System.out.println("Customer has earned $" + df.format(interest) + " in interest.");
+        return super.deposit(interest); //calls parent class's deposit method to avoid increasing "numberOfDeposits"
     }
 
     @Override

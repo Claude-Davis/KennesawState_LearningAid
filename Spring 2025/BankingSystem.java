@@ -8,8 +8,8 @@ public class BankingSystem {
         Scanner scan = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("0.00"); //displays every double or float variable to the hundredths place
 
-        Savings saveAcc = new Savings();
         Checking checkAcc = new Checking();
+        Savings saveAcc = new Savings();
 
         //title
         System.out.println("[Banking System]");
@@ -41,44 +41,86 @@ public class BankingSystem {
 
                 switch (option){
                     case 1:
+                        System.out.println("(Enter '0' to return to menu.)");
+                
                         System.out.print("How much would you like to withdraw from checking? $");
                         double amountC = scan.nextDouble();
 
-                        checkAcc.withdraw(amountC);
+                        if (amountC > 0){
+                            checkAcc.withdraw(amountC);
 
-                        System.out.println("Current balance of checking is $" + df.format(checkAcc.getAccountBalance()));
+                            System.out.println("Current balance of checking is $" + df.format(checkAcc.getAccountBalance()));
 
-                        System.out.println(" ");
+                            System.out.println(" ");
+                        } else if (amountC == 0){  //allow user to return to main menu early/on-command
+                            System.out.println(" ");
+                            break;
+                        } else if (amountC < 0){
+                            System.out.println("Invalid Entry.");
+                            break; 
+                        }
+
                         break;
                     case 2:
+                        System.out.println("(Enter '0' to return to menu.)");
+
                         System.out.print("How much would you like to withdraw from Savings? $");
                         double amountS = scan.nextDouble();
 
-                        saveAcc.withdraw(amountS);
+                        if (amountS > 0){
+                            saveAcc.withdraw(amountS);
 
-                        System.out.println("Current balance of Savings is $" + df.format(saveAcc.getAccountBalance()));
-                            
-                        System.out.println(" ");
+                            System.out.println("Current balance of Savings is $" + df.format(saveAcc.getAccountBalance()));
+                                
+                            System.out.println(" ");
+                        } else if (amountS == 0){
+                            System.out.println(" ");
+                            break;
+                        } else if (amountS < 0){
+                            System.out.println("Invalid Entry.");
+                            break;
+                        }
+                        
                         break;
                     case 3:
+                        System.out.println("(Enter '0' to return to menu.)");
+
                         System.out.print("How much would you like to deposit to Checking? $");
                         double amount = scan.nextDouble();
 
-                        checkAcc.deposit(amount);
+                        if (amount > 0){
+                            checkAcc.deposit(amount);
 
-                        System.out.println("Current balance of Checking is $" + df.format(checkAcc.getAccountBalance()));
+                            System.out.println("Current balance of Checking is $" + df.format(checkAcc.getAccountBalance()));
 
-                        System.out.println(" ");
+                            System.out.println(" ");
+                        } else if (amount == 0){ //allow for returning to the main menu
+                            System.out.println(" ");
+                            break;
+                        } else if (amount < 0){ //prevent negative entries
+                            System.out.println("No negative numbers.");
+                            System.out.println(" ");
+                        }
+
                         break;
                     case 4:
                         System.out.print("How much would you like to deposit to Savings? $");
                         amountS = scan.nextDouble();
 
-                        saveAcc.deposit(amountS);
+                        if (amountS > 0){
+                            saveAcc.deposit(amountS);
 
-                        System.out.println("Current balance of Savings is $" + df.format(saveAcc.getAccountBalance()));
+                            System.out.println("Current balance of Savings is $" + df.format(saveAcc.getAccountBalance()));
 
-                        System.out.println(" ");
+                            System.out.println(" ");
+                        } else if (amountS == 0){ //allow user to return to main menu
+                            System.out.println(" ");
+                            break;
+                        } else if (amountS < 0){ //prevent negative entries
+                            System.out.println("No negative numbers.");
+                            System.out.println(" ");
+                        }
+
                         break;
                     case 5:
                         System.out.println(checkAcc.toString());
@@ -97,8 +139,10 @@ public class BankingSystem {
                         break;
 
                     default: //in case user input's a number outside te range of 0-8
-                        System.out.println("Invalid Entry.");
-                        System.out.println(" ");
+                        if (option > 8 || option <= 0){
+                            System.out.println("Invalid Entry.");
+                            System.out.println(" ");
+                        }
 
                         break;
                 }
