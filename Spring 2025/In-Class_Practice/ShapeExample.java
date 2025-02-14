@@ -3,12 +3,4 @@ abstract class ShapeExample{
         public double area;
         public double perimeter;
 
-        public shape(int side[]){
-            this.sides;
-        }
-}
-
-
-class Square {
-    //
 }
