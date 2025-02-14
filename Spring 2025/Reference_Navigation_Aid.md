@@ -21,9 +21,11 @@ CLASSES
 
     Classes in Separate Files:
         - TicketManager, ParkWallet (Module 3)
+        - BankingSystem, Account (Module3)
 
 Getter / Setter Functions for Private Attributes:
     - TicketManager, ParkWallet (Module 3)
+    - BankingSystem, Account (Module3)
 
 CONDITIONALS AND LOOPS
     While:
@@ -31,6 +33,7 @@ CONDITIONALS AND LOOPS
         - Phonebook (Module 1)
         - StoreManagement (Moduel 1)
         - TicketManager, ParkWallet (Module 3)
+        - BankingSystem, Account (Module3)
 
     For, For Each:
         - 
@@ -40,10 +43,18 @@ CONDITIONALS AND LOOPS
         - Phonebook (Module 1)
         - StoreManagement (Moduel 1)
         - TicketManager, ParkWallet (Module 3)
+        - BankingSystem, Account (Module3)
+
+    If / If Else:
+        - SimpleMenu (Module 1)
+        - StoreManagement (Moduel 1)
+        - TicketManager, ParkWallet (Module 3)
+        - BankingSystem, Account (Module3)
 
 MATHEMATICS
     DecimalFormat Class:
         - StoreManagement (Moduel 1)
+        - BankingSystem, Account (Module3)
 
     Exponentiation:
         - BudgetSystem (Module 1)
@@ -53,27 +64,26 @@ MATHEMATICS
 
 
 LOGICAL OPERATORS
+    - SimpleMenu (Module 1)
     - BudgetSystem (Module 1)
     - StoreManagement (Moduel 1)
+    - BankingSystem, Account (Module3)
 
 BOOLEAN CONDITIONALS
     - SimpleMenu (Module 1)
     - BudgetSystem (Module 1)
     - StoreManagement (Moduel 1)
     - TicketManager, ParkWallet (Module 3)
+    - BankingSystem, Account (Module3)
 
-Loops / Conditions:
-
-
-    If / If Else:
-        - StoreManagement (Moduel 1)
-        - TicketManager, ParkWallet (Module 3)
-
-String Methods:
+STRING METHODS
     .contains()
         - Phonebook (Module 1)
     .equals()
+        - SimpleMenu (Module 1)
         - Phonebook (Module 1)
+    .toString()
+        - BankingSystem, Account (Module3)
 
-ArrayLists / Arrays:
+ARRAYLIST / ARRAYS
     - Phonebook (Module 1)
