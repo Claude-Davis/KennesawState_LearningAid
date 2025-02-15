@@ -20,7 +20,7 @@ class Tradable extends DigitalGood{
     public int setDelay(int sD){
         //check if user value is negative or positive
         if (sD < 0){
-            this.saleDelay = saleDelay;
+            this.saleDelay = 0;
         } else{
             this.saleDelay = sD;
         }
@@ -31,6 +31,6 @@ class Tradable extends DigitalGood{
     @Override
     public String toString(){
         //The "\t" allows the remaining content to be printed on a new line
-        return "Item: " + getName() + "(#" + getId() + ") | Price: $" + getPrice() + "\t    Description: " + getDescription() + "\t    Item can only be sold after being owned for " + saleDelay + " days.";
+        return "Item: " + getName() + "(#" + getId() + ") | Price: $" + df.format(getPrice()) + "\n    Description: " + getDescription() + "\n    Item can only be sold after being owned for " + saleDelay + " days.";
     }
 }

@@ -1,10 +1,14 @@
 package Digital_Inventory_System;
 
+import java.text.DecimalFormat;
+
 class Item {
     private int id;
     private static int nextId = 0;
     private double price;
     private String name;
+
+    DecimalFormat df = new DecimalFormat("0.00");
 
     //constructor w/o parameters
     public Item(){
@@ -57,6 +61,6 @@ class Item {
     //override of toString() method
     @Override
     public String toString(){
-        return "Item: " + name + " (#" + id + ")" + " | Price $" + price;
+        return "Item: " + name + " (#" + id + ")" + " | Price $" + df.format(price);
     }
 }

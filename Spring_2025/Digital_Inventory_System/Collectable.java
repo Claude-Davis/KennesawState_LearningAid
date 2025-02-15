@@ -16,22 +16,17 @@ class Collectable extends DigitalGood{
 
     //setter (type)
     public String setType(String t){
-        if (t.equals("emoticon")){
-            this.type = t;
-        } else if (t.equals("avatar")){
-            this.type = t;
-        } else if (t.equals("background")){
-            this.type = t;
-        } else {
-            this.type = "nothing";
-        }
+        if (t.equals("emoticon"))  {this.type = t;}
+        else if (t.equals("avatar"))  {this.type = t;}
+        else if (t.equals("background"))  {this.type = t;}
+        else {this.type = "nothing";}
 
         return type;
     }
 
     @Override
     public String toString(){
-        //The "\t" allows the remaining content to be printed on a new line
-        return "Item: " + getName() + "(#" + getId() + ") | Price: $" + getPrice() + "\t    Description: " + getDescription() + "\t    Can be used as " + type + ".";  
+        //The "\n" allows the remaining content to be printed on a new line
+        return "Item: " + getName() + " (#" + getId() + ") | Price: $" + df.format(getPrice()) + "\n    Description: " + getDescription() + "\n    Can be used as " + type + ".";
     }
 }

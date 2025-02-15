@@ -16,18 +16,19 @@ class VideoGame extends Software{
     }
 
     //setter (multiplayerSupport)
-    public void setSupport(boolean support) {
-        this.multiplayerSupport = support;
-    }
-    
-    //public boolean setSupport(String support){
-        this.multiplayerSupport = support;
+    public Boolean setSupport(String support) {
+        if ((support.toLowerCase()).equals("yes") || (support.toLowerCase()).equals("true")){
+            this.multiplayerSupport = true;
+        } else if ((support.toLowerCase()).equals("no")) {
+            this.multiplayerSupport = false;
+        }
+
         return multiplayerSupport;
-    //}
+    }
 
     @Override
     public String toString(){
         //The "\n" allows the remaining content to be printed on a new line
-        return "Item: " + getName() + "(#" + getId() + ")" + " | Price: $" + getPrice() + "\n   Publisher: " + getPublisher() + "\n      Multiplayer Support: " + multiplayerSupport; 
+        return "Item: " + getName() + " (#" + getId() + ")" + " | Price: $" + df.format(getPrice()) + "\n   Publisher: " + getPublisher() + "\n      Multiplayer Support: " + multiplayerSupport;
     }
 }

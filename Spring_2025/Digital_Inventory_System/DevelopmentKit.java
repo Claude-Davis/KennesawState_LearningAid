@@ -31,7 +31,11 @@ class DevelopmentKit extends Software{
 
     @Override
     public String toString(){
+        StringBuilder platforms = new StringBuilder();
+        for (String platform : targetPlatforms){
+            platforms.append("\t    ").append(platform).append("\n");
+        }
         //The "\t" allows the remaining content to be printed on a new line
-        return "Item: " + getName() + " (#" + getId() + ")" + " | Price $" + getPrice() + "\t   Publisher: " + getPublisher() + "\t   Target Platforms: " + targetPlatforms + ".";
+        return "Item: " + getName() + " (#" + getId() + ")" + " | Price $" + df.format(getPrice()) + "\n   Publisher: " + getPublisher() + "\n   Target Platforms: \n" + platforms.toString();
     }
 }

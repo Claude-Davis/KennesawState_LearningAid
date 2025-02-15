@@ -1,0 +1,13 @@
+Subclasses of Item:
+    * Software
+    * DigitalGood
+
+Sublclasses of Software:
+    * VideoGame
+    * DevelopmentKit
+
+Subclasses of DigitalGood:
+    * Tradable
+    * Collectable
+
+Primary class: Main
