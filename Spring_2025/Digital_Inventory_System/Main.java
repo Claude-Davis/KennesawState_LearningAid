@@ -38,13 +38,13 @@ public class Main {
                 case 1: //VideoGame , creating a VideoGame object
                     //prompt user for necessary info
                     System.out.print("Enter name of item: ");
-                    String name = scan.nextLine();
                     scan.nextLine();
+                    String name = scan.nextLine();
                         System.out.print("Enter price of item: $");
                         double price = scan.nextDouble();
                             System.out.print("Enter name of publisher: ");
-                            String publisher = scan.nextLine();
                             scan.nextLine();
+                            String publisher = scan.nextLine();
                                 System.out.print("Does this game have multiplayer support? ");
                                 boolean multiplayerSupport = scan.nextBoolean();
 
@@ -54,7 +54,7 @@ public class Main {
                     items.add(newGame);
                     System.out.println("Item added.");
 
-                    System.out.println(items);
+                    System.out.println(newGame.toString());           //debugging purposes
 
                     System.out.println(" ");
                     break;
