@@ -2,7 +2,7 @@ package Digital_Inventory_System;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.text.DecimalFormat;
+//import java.text.DecimalFormat;
 
 
 public class Main {
@@ -10,7 +10,7 @@ public class Main {
         //imports
         Scanner scan = new Scanner (System.in);
         ArrayList<Item> items = new ArrayList<>();  //creates an arraylist of Item (class)
-        DecimalFormat df = new DecimalFormat("0.00");
+        //DecimalFormat df = new DecimalFormat("0.00");
 
         //initiate "choice"
         int choice = 0;
@@ -25,6 +25,8 @@ public class Main {
             System.out.println("5. List All Items");
             System.out.println("6. Update Price");
             System.out.println("7. Quit Program");
+
+            System.out.print("Enter option: ");
             choice = scan.nextInt();
 
             switch (choice){
@@ -35,15 +37,24 @@ public class Main {
                     break;
                 case 1: //VideoGame , creating a VideoGame object
                     //prompt user for necessary info
+                    System.out.print("Enter name of item: ");
                     String name = scan.nextLine();
-                    double price = scan.nextDouble();
-                    String publisher = scan.nextLine();
-                    boolean multiplayerSupport = scan.nextBoolean();
+                    scan.nextLine();
+                        System.out.print("Enter price of item: $");
+                        double price = scan.nextDouble();
+                            System.out.print("Enter name of publisher: ");
+                            String publisher = scan.nextLine();
+                            scan.nextLine();
+                                System.out.print("Does this game have multiplayer support? ");
+                                boolean multiplayerSupport = scan.nextBoolean();
 
                     //create object (VideoGame)
                     VideoGame newGame = new VideoGame(name, price, publisher, multiplayerSupport);
                     //add the object the arraylist "items"
                     items.add(newGame);
+                    System.out.println("Item added.");
+
+                    System.out.println(items);
 
                     System.out.println(" ");
                     break;

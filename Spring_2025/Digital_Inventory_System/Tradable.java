@@ -31,6 +31,6 @@ class Tradable extends DigitalGood{
     @Override
     public String toString(){
         //The "\t" allows the remaining content to be printed on a new line
-        return "Item: " + getName() + "(#" + getId() + ") | Price: $" + getPrice() + "\t    Description: " + getDescription() + "\t    Item can only be sold after being owned for " + getDelay() + " days.";
+        return "Item: " + getName() + "(#" + getId() + ") | Price: $" + getPrice() + "\t    Description: " + getDescription() + "\t    Item can only be sold after being owned for " + saleDelay + " days.";
     }
 }

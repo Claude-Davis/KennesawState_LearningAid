@@ -29,6 +29,6 @@ class Software extends Item{
 
     @Override
     public String toString(){
-        return "Item: " + getName() + " (#" + getId() + ")" + " | Price $" + getPrice() + "\t   Publisher: " + getPublisher(); //The "\t" allows the remaining content to be printed on a new line
+        return "Item: " + getName() + " (#" + getId() + ")" + " | Price $" + getPrice() + "\t   Publisher: " + publisher; //The "\t" allows the remaining content to be printed on a new line
     }
 }
