@@ -54,7 +54,7 @@ public class Main {
                     items.add(newGame);
                     System.out.println("Item added.");
 
-                    System.out.println(newGame.toString());           //debugging purposes
+                    //System.out.println(newGame.toString());           //debugging purposes
 
                     System.out.println(" ");
                     break;
