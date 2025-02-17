@@ -18,7 +18,7 @@
 
 # All Imports
 
-## Scanner (saved as "sc")
+## Scanner (saved as "scan")
 - Imported and used in the Main file and to allow for inputs.
 
 ## ArrayList (saved as "items" and "targetPlatforms"(x2))
