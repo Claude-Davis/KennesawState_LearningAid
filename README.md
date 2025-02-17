@@ -11,7 +11,7 @@
 - Tarun Teja Pokala (lab - Spring 2025)
 
 🍁 Fall 2024 : Python
-🍀 Spring 2025 : Java, C# [, Kotlin (primarily self-guided]
+🍀 Spring 2025 : Java, C# [, Kotlin (primarily self-guided)]
 
 ---
 
@@ -30,9 +30,6 @@
 🍀 Primavera 2025 : Java, C#
 
 ---
-
-
-## 
 
 
 <sub>August 2024 - May 2028 | Agosto 2024 - Mayo 2028</sub>

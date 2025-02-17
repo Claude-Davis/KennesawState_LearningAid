@@ -46,7 +46,7 @@ class Item {
         if (pri > 0){  //checks if value is a positive number
             this.price = pri;
         } else {
-            this.price = price;  //if value of p is negative (or 0) the value of price is unchanged
+            this.price = pri * (-1) ;  //if value of p is negative (or 0) the value of price is made positive
         }
 
         return price;

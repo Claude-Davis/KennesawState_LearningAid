@@ -70,7 +70,7 @@ public class Main {
                     System.out.println(" ");
                     break;
 
-                case 2: //Development Kit
+                case 2: //DevelopmentKit
                     System.out.println(" ");
 
                     //prompt user for info
