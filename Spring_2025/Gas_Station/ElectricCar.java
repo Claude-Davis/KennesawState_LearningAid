@@ -1,17 +1,16 @@
-//subclass of car
 
-class ElectricCar extends Car{
-    private double maxSpeed;
+class ElectricCar extends Car implements ElectricEngine{
+    private double maxBattery;
     private double currentCharge;
 
-    class ElectricCar(double maxSpeed, double currentCharge){
-        this.maxSpeed = maxSpeed;
+    public ElectricCar(double maxBattery, double currentCharge){
+        this.maxBattery = maxBattery;
         this.currentCharge = currentCharge;
     }
 
     @Override
     public String toString(){
-        //
+        return "Car: " + getId() + " | Current Charge: " + currentCharge + "/" + maxBattery + " kW";
     }
 
 }

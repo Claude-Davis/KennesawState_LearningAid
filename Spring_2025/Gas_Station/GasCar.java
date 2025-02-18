@@ -1,7 +1,6 @@
 //subclass of Car
 
-class GasCar extends Car{
-    //implement interface GasEngine
+class GasCar extends Car implements GasEngine{
     private double tankCapacity;
     private double currentVolume;
 
@@ -11,18 +10,8 @@ class GasCar extends Car{
         this.currentVolume = currentVolume;
     }
 
-    //getter (tank capacity)
-    public double getTCapacity(){
-        return tankCapacity;
-    }
-
-    //getter (current volume)
-    public double getCVolume(){
-        return currentVolume;
-    }
-
     @Override
     public String toString(){
-        return "Car: " + getId() + " | Current Fuel: " + currentVolume + "/" + tankCapacity + " gallons.";
+        return "Car: " + getId() + " | Current Fuel: " + currentVolume + "/" + tankCapacity + " gals";
     }
 }

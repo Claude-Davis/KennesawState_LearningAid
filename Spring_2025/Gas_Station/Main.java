@@ -1,14 +1,23 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.text.DecimalFormat;
+import java.util.Random; //to allow for random # generation
 
 public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        ArrayList<Car> cars = new ArrayList<>();
+        DecimalFormat df = new DecimalFormat("0.00");
+        Random ranNum = new Random(System.in);
 
         //title
         System.out.println("[The Refueler Station]");
 
         //initialize "option"
         int option = 0;
+
+        //initialize "balance"
+        double balance;  //will track the profit of the gas station
 
         while (option != 9){
             //menu
@@ -30,21 +39,51 @@ public class Main {
                 case 1:
                     System.out.println(" ");
 
-                    //
+                    //random generation of the needed values
+                    double tankCapacity = ranNum(30) + 15;
+                    double currentVolume = ranNum(14) + 2;
+
+                    //create object for GasCar
+                    GasCar gasCar = new GasCar(tankCapacity, currentVolume);
+
+                    //add object to "cars" ArrayList
+                    cars.add(gasCar);
+
+                    System.out.println("Vehicle " + getId() + " has parked at a pump.");
 
                     System.out.println(" ");
                     break;
                 case 2:
                     System.out.println(" ");
 
-                    //
+                    //random generation of the needed values
+                    double maxBattery = ranNum(100) + 40;
+                    double currentCharge = ranNum(30) + 2;
+
+                    //create object of ElectricCar
+                    ElectricCar elecCar = new ElectricCar(maxBattery, currentCharge);
+
+                    //add object to "cars"
+                    cars.add(elecCar);
+
+                    System.out.println("Vehicle " + getId() + " has parked at a pump.");
 
                     System.out.println(" ");
                     break;
                 case 3:
                     System.out.println(" ");
 
-                    //
+                    //random generation of the needed values
+                    tankCapacity = ranNum(30) + 15;
+                    currentVolume = ranNum(14) + 2;
+                    maxBattery = ranNum(100) + 40;
+                    currentCharge = ranNum(30) + 2;
+
+                    //create object of HybridCar
+                    HybridCar hybrid = new HybridCar(tankCapacity, currentVolume, currentCharge, maxBattery);
+
+                    //add object to "cars"
+                    cars.add(hybrid);
 
                     System.out.println(" ");
                     break;
@@ -72,7 +111,9 @@ public class Main {
                 case 7:
                     System.out.println(" ");
 
-                    //
+                    for (int c=0; c<=cars.size(); c++){
+                        System.out.println(cars.get(c).toString());
+                    }
 
                     System.out.println(" ");
                     break;
