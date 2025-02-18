@@ -1,4 +1,4 @@
-# Kennesaw-State_Notes-Guides
+# KSU - Learning Aid Repo
 
 ## Purpose of the Repository
   This repository stores the assignments and examples from my programming courses at Kennesaw State University (KSU).

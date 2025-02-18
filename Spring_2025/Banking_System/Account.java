@@ -1,4 +1,4 @@
-//prompt: https://www.kennesaw.edu/ccse/first-year-experience/cse1322l/labs/1322l-lab-5-v1.pdf
+
 
 import java.text.DecimalFormat;
 

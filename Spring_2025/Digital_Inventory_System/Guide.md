@@ -54,3 +54,15 @@ This class contains the attributes "price", "id", "nextId", and "name" that are 
 Each of these attributes are used by all objects created in the Main class, the exception being "nextId" which is used only update "id" and provide each object initiated with its own id#.
 
 This class contains a setter for "price" that utlizes an **if-else** statement in order to prevent the user from assigning a negative price to any object. If the user inputs a number greater than 0, that price is given to the object, otherwise it is multiplied by -1 and made into the positive value of the given number.
+
+## Software
+
+## VideoGame
+
+## DebelopmentKit
+
+## DigitalGood
+
+## Tradable
+
+## Collectable
