@@ -1,3 +1,5 @@
+package Gas_Station;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.text.DecimalFormat;

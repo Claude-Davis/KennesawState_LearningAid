@@ -1,3 +1,4 @@
+package Gas_Station;
 
 public interface ElectricEngine {
 

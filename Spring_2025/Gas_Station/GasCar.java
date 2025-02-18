@@ -1,4 +1,4 @@
-//subclass of Car
+package Gas_Station;
 
 class GasCar extends Car implements GasEngine{
     private double tankCapacity;

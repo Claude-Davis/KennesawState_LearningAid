@@ -1,3 +1,4 @@
+package Gas_Station;
 
 class ElectricCar extends Car implements ElectricEngine{
     private double maxBattery;

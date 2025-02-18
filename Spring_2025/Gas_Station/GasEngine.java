@@ -1,3 +1,5 @@
+package Gas_Station;
+
 
 public interface GasEngine {
     double refuelTank(double refuel){
