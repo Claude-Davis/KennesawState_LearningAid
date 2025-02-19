@@ -1,15 +1,12 @@
-package Gas_Station;
+package Refueler_Station;
+
+//defines the ESSENTIAL methods that must be implemented by HybridCar and ElectricCar
 
 public interface ElectricEngine {
 
-    double rechargeBattery(double recharge){
-        if (recharge <= maxBattery)    {battery = recharge;}
-        if (recharge > maxBattery)     {battery = maxBattery;}
-    }
+    double rechargeBattery(double recharge);
 
-    //getter (maxBattery)
-    double getMaxBattery()     {return maxBattery;}  //returns max. capacity in kW
+    double getMaxBattery(); //maxBattery is the maximum value of charge the vehicle can have
 
-    //getter (currentCharge)
-    double getCurrentCharge()  {return currentCharge;}   //returns current charge in kW
+    double getCurrentCharge(); //currentCharge is the amount of charge the vehicle currently has
 }
