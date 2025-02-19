@@ -107,14 +107,30 @@ public class Main {
                 case 4:  //refuel all gas engines
                     System.out.println(" ");
 
-                    //
+                    //initialize variable to hold total amount of fuel dispersed [in order to calculate balance]
+                    double totalFuel = 0;
+
+                    //refuel gas engines
+                    for (int g=0; g<=cars.size(); g++) {
+                        while (g<cars.size()) { 
+                            double refuel = cars.get(g).getTankCapacity() - cars.get(g).getCurrentVolume();
+                            cars.get(g).refuelTank(refuel);
+                            totalFuel += refuel;
+                        }
+                    }
+
+                    //calculate balance
+                    balance += (4 * totalFuel);
+
+                    //Statement
+                    System.out.println("All gas engines have been fueled. THe current balance is $" + balance + ".");
 
                     System.out.println(" ");
                     break;
                 case 5:  //recharge all electric engines
                     System.out.println(" ");
 
-                    //
+                    //initialize variable to store all charges dispersed
 
                     System.out.println(" ");
                     break;
