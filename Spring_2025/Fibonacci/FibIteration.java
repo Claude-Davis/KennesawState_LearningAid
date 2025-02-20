@@ -1,3 +1,5 @@
+package Fibonacci;
+
 class FibIteration implements FindFib {
     public int calculateFib(int n){
         if (n < 1){
@@ -17,6 +19,6 @@ class FibIteration implements FindFib {
             b = fib;
         }
         
-        return fib
+        return fib;
     }
 }
