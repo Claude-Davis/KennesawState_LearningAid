@@ -107,7 +107,7 @@ public class Main {
                 case 4:  //refuel all gas engines
                     System.out.println(" ");
 
-                    //initialize variable to hold total amount of fuel dispersed [in order to calculate balance]
+                    //initialize variable to hold total amount of fuel distributed [in order to calculate balance]
                     double totalFuel = 0;
 
                     //refuel gas engines
@@ -116,6 +116,7 @@ public class Main {
                             double refuel = cars.get(g).getTankCapacity() - cars.get(g).getCurrentVolume();
                             cars.get(g).refuelTank(refuel);
                             totalFuel += refuel;
+                            g++;  //to ensure the while loop eventually ends
                         }
                     }
 
@@ -123,35 +124,85 @@ public class Main {
                     balance += (4 * totalFuel);
 
                     //Statement
-                    System.out.println("All gas engines have been fueled. THe current balance is $" + balance + ".");
+                    System.out.println("All gas engines have been fueled. THe current balance is $" + df.format(balance) + ".");
 
                     System.out.println(" ");
                     break;
                 case 5:  //recharge all electric engines
                     System.out.println(" ");
 
-                    //initialize variable to store all charges dispersed
+                    //initialize variable to store all charges distributed
+                    double totalCharges = 0;
+
+                    //recharge electric engines
+                    for (int e=0; e<=cars.size(); e++) {
+                        while (e<cars.size()) {
+                            double recharge = cars.get(e).getMaxBattery() - cars.get(e).getCurrentCharge();
+                            cars.get(e).rechargeBattery(recharge);
+                            totalCharges += recharge;
+                            e++;  //to ensure the while loop eventually ends
+                        }
+                    }
+
+                    //calculate balance
+                    balance += (0.2 * totalCharges);
+
+                    //Statement
+                    System.out.println("All electric engines have been charged. The current balance is $" + df.format(balance) + ".");
 
                     System.out.println(" ");
                     break;
                 case 6:  //refuel and recharge all engines
                     System.out.println(" ");
 
-                    //
+                    //variables to store all charges and fuel distributed
+                    totalCharges = 0;
+                    totalFuel = 0;
+
+                    //recharge and refuel all engines
+                    for (int h=0; h<=cars.size(); h++) {
+                        while (h<cars.size()){
+                            double recharge = cars.get(h).getMaxBattery() - cars.get(h).getCurrentCharge();
+                            double refuel = cars.get(h).getTankCapacity() - cars.get(h).getCurrentVolume();
+                            cars.get(h).rechargeBattery(recharge);
+                            cars.get(h).refuelTank(refuel);
+                            totalCharges += recharge;
+                            totalFuel += refuel;
+                            h++; //to ensure the while loop eventually ends
+                        }
+                    }
+
+                    //calculate balance 
+                    balance = (totalCharges * 0.2) + (totalFuel * 4);
+
+                    //Statement
+                    System.out.println("All engines have been recharged and refueled. The current balance is $" + df.format(balance) + ".");
 
                     System.out.println(" ");
                     break;
                 case 7: //display all vehicles and their stats
                     System.out.println(" ");
 
-                    //                    }
+                    //print all vehicles
+                    if (cars.size() > 0) {
+                        for (int c=0; c<cars.size(); c++){
+                            while (c<cars.size()){
+                                System.out.println(cars.get(c).toString());
+                                c++; //to ensure the while loop eventually ends
+                            }
+                        }
+                    } else {System.out.println("No vehicles are parked.");}
 
                     System.out.println(" ");
                     break;
                 case 8:  //dispatch all vehicles
                     System.out.println(" ");
 
-                    //
+                    //clear the "cars" ArrayList
+                    cars.clear();
+
+                    //Statement
+                    System.out.println("All vehicles have left.");
 
                     System.out.println(" ");
                     break;
