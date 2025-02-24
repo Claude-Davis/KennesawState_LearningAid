@@ -92,14 +92,76 @@ public class Main{
                         System.out.println("New playlist created!");
 
                 break;
-                case 4:                                                                             // 4. list all songs
-                    //loop to call/print the toString() method for each Song object (independent downloads)
-                        for (int s=0; s<=songs.size(); s++){
-                            while (s<songs.size()){
-                                System.out.println(songs.get(s).toString());
-                                s++;
+                case 3:                                                                         // 3. add songs to playlist
+                    //decide which playlist to add to
+                        System.out.println("What playlist do you want to add songs to?");
+                            //list all playlists
+                                for (int p=0; p<=allPlaylists.size(); p++){
+                                    while(p<allPlaylists.size()){
+                                        System.out.println(allPlaylists.get(p).toString());
+                                        p++;
+                                    }
+                                }
+                        System.out.println(" ");
+                        System.out.print("Enter id # : ");
+                        int idP = sc.nextInt();
+                        for (int p=0; p<=allPlaylists.size(); p++) {
+                            if (allPlaylists.get(p).getId() == idP) {
+                                //prompt for info
+                                    System.out.print("Enter song title: ");
+                                        title = sc.nextLine();
+                                    System.out.print("Enter artist name: ");
+                                        artist = sc.nextLine();
+                                allPlaylists.get(p).addSong(title, artist);
                             }
                         }
+
+                    
+                break;
+                case 4:                                                                             // 4. list all songs
+                    //list which songs?
+                        //menu
+                            System.out.println("1. List individually downloaded songs");
+                            System.out.println("2. List songs from a playlist");
+                            System.out.println("3. Return to main menu");
+                            System.out.print("Choice #: ");
+                            int option3 = sc.nextInt();
+                        //switch statement
+                            switch(option3){
+                                default:
+                                    System.out.println("Invalid Entry");
+                                case 1:                                                                     //list all individual songs
+                                    for (int s=0; s<=songs.size(); s++){
+                                        while (s<songs.size()){
+                                            System.out.println(songs.get(s).toString());
+                                            s++;
+                                        }
+                                    }
+                                break;
+                                case 2:                                                                      //list songs in a playlist
+                                    //list all playlists
+                                        for (int p=0; p<=allPlaylists.size(); p++){
+                                            while(p<allPlaylists.size()){
+                                                System.out.println(allPlaylists.get(p).toString());
+                                                p++;
+                                            }
+                                        }
+                                    //choose a playlist
+                                        System.out.print("Enter id #: ");
+                                        int chosenPlaylist = sc.nextInt();
+                                        for (int p=0; p<=allPlaylists.size(); p++){
+                                            while(p<allPlaylists.size()){
+                                                if (allPlaylists.get(p).getId() == chosenPlaylist){
+                                                    System.out.println(allPlaylists.get(p).listSongs());
+                                                }
+                                                p++;
+                                            }
+                                        }
+                                break;
+                                case 3:
+
+                                break;
+                            }
 
                 break;
                 case 5:                                                                             // 5. list all playlists

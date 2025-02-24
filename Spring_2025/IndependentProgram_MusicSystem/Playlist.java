@@ -8,7 +8,7 @@ class Playlist{
     private static int nextId = 1;
     private String name;
     private String description;
-    private ArrayList<Song> playlist;
+    private static ArrayList<Song> playlist;
     private static int playlistsCounter = 1;
 
     public Playlist(String name, String description, ArrayList<Song> playlist){
@@ -20,7 +20,31 @@ class Playlist{
         this.nextId++;
     }
 
+    //method to add songs to "playlist"
+    public ArrayList<Song> addSong(String title, String artist) {
+        //create object of Song
+        Song song = new Song(title, artist);
+
+        //add Song object to playlist
+        playlist.add(song);
+
+        return playlist;
+    }
+
+    //method to print songs in a playlist
+    public String listSongs(){
+        String
+        for (int s=0; s<=playlist.size(); s++){
+            while (s<playlist.size()){
+                String songP = playlist.get(s);
+                s++;
+            }
+        }
+        return playlist.get(s);
+    }
+
     //method to reward user for certain actions
+            //pending implementation....
     public void awards(int song){
         //reward for saving 10 songs
         if (playlist.size() == 10){
