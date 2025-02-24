@@ -21,8 +21,8 @@ public class Main{
             System.out.println("1. Download a song");
             System.out.println("2. Make a playlist");
             System.out.println("3. Add a song to a playlist");
-            System.out.println("4. List all songs");
-            System.out.println("5. List all playlists");
+            System.out.println("4. Display songs");
+            System.out.println("5. Display playlists");
             System.out.println("6. Search songs");
             System.out.println("7. Delete a song");
             System.out.println("8. Delete a playlist");
@@ -93,7 +93,7 @@ public class Main{
 
                 break;
                 case 4:                                                                             // 4. list all songs
-                    //loop to call/print the toString() method for each Song object
+                    //loop to call/print the toString() method for each Song object (independent downloads)
                         for (int s=0; s<=songs.size(); s++){
                             while (s<songs.size()){
                                 System.out.println(songs.get(s).toString());
@@ -177,8 +177,6 @@ public class Main{
                                 System.out.println("Invalid Entry");
                                 break;
                             case 1:                                                     // delete a song (id # req.)
-                                System.out.println(" ");
-
                                 //enter id # to delete the corresponding song
                                     System.out.print("Enter song id #: ");
                                     int deleteSong = sc.nextInt();
@@ -187,19 +185,36 @@ public class Main{
                                     for (int d=0; d<=songs.size(); d++){
                                         if (songs.get(d).getId() == deleteSong){
                                             songs.remove(d);
-                                        }
+                                        } else if (false) {System.out.println("There is no song with this id #.");}
+                                        d++;  
                                     }
 
                                 //statement
                                     System.out.println("Song deleted.");
 
-                                System.out.println(" ");
                                 break;
                             case 2:                    
                                 //
 
                             break;
                         }
+
+                break;
+                case 8:                                                                                    // 8. delete playlists
+                    // enter id # to delete the corresponding playlist
+                    System.out.print("Enter playlist id #: ");
+                        int deletePlaylist = sc.nextInt();
+                    
+                    //search for matching id #
+                    for (int d=0; d<= allPlaylists.size(); d++){
+                        if (allPlaylists.get(d).getId() == deletePlaylist) {
+                            allPlaylists.remove(d);
+                        } else if (false) {System.out.println("There is no playlist with this id #.");}
+                        d++;
+                    }
+
+                    //statement
+                    System.out.println("Playlist deleted.");
 
                 break;
             }

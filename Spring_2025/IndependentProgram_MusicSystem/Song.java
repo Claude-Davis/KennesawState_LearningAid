@@ -3,7 +3,7 @@ package IndependentProgram_MusicSystem;
 class Song{
     //attributes
     private int id;
-    private static int nextId = 0;   //NOTE: include **static**  for updating variables!
+    private static int nextId = 1;   //NOTE: include **static**  for updating variables!
     private String title;
     private String artist;
 

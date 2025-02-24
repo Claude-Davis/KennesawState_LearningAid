@@ -5,7 +5,7 @@ import java.util.ArrayList;
 class Playlist{
     // attributes
     private int id;
-    private static int nextId = 0;
+    private static int nextId = 1;
     private String name;
     private String description;
     private ArrayList<Song> playlist;
