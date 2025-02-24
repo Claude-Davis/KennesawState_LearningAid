@@ -35,7 +35,7 @@ class DevelopmentKit extends Software{
         for (String platform : targetPlatforms){
             platforms.append("\t    ").append(platform).append("\n");
         }
-        //The "\t" allows the remaining content to be printed on a new line
+        //The "\n" allows the remaining content to be printed on a new line
         return "Item: " + getName() + " (#" + getId() + ")" + " | Price $" + df.format(getPrice()) + "\n   Publisher: " + getPublisher() + "\n   Target Platforms: \n" + platforms.toString();
     }
 }
