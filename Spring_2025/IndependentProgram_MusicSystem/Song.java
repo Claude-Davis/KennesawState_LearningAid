@@ -23,5 +23,5 @@ class Song{
     //getter (id)
     public int getId()  {return id;}
 
-    public String toString()  {return "Song #" + id + ": '" + title + "' by " + artist + ".";}
+    public String toString()  {return "Song #" + id + ": '" + title + "' by " + artist;}
 }
