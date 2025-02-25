@@ -2,13 +2,11 @@ package IndependentProgram_MusicSystem;
 
 import java.util.ArrayList;
 
-class Playlist{
+class Playlist extends Music{
     // attributes
-    private int id;
-    private static int nextId = 1;
     private String name;
     private String description;
-    private static ArrayList<Song> playlist;
+    private ArrayList<Song> playlist;  //not static bcs each playlist object will have its own list of songs
     private static int playlistsCounter = 1;
 
     public Playlist(String name, String description, ArrayList<Song> playlist){
@@ -16,15 +14,10 @@ class Playlist{
         this.description = description;
         this.playlist = playlist;
         this.playlistsCounter++;
-        this.id = nextId;
-        this.nextId++;
     }
 
     //method to add songs to "playlist"
-    public ArrayList<Song> addSong(String title, String artist) {
-        //create object of Song
-        Song song = new Song(title, artist);
-
+    public ArrayList<Song> addSong(Song song) {
         //add Song object to playlist
         playlist.add(song);
 
@@ -32,16 +25,16 @@ class Playlist{
     }
 
     //method to print songs in a playlist
-    public String listSongs(){
-        String
+    /* public String displaySongs(){
+        Song song = "";
         for (int s=0; s<=playlist.size(); s++){
             while (s<playlist.size()){
-                String songP = playlist.get(s);
+                song = playlist.get(s);
                 s++;
             }
         }
-        return playlist.get(s);
-    }
+        return "\n" + song;
+    } */
 
     //method to reward user for certain actions
             //pending implementation....
@@ -71,9 +64,6 @@ class Playlist{
     //getter (name)
     public String getPlaylistName() {return name;}
 
-    //getter (id)
-    public int getId() {return id;}
-
-    //toString() method
-    public String toString()  {return "Playlist #" + id + ":  " + name + "\n   Description: " + description;}
+    // toString() method
+    public String toString()  {return "Playlist #" + getId() + ":  " + name + "\n   Description: " + description;}
 }

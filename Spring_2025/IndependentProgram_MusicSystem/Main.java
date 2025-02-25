@@ -61,11 +61,11 @@ public class Main{
                         System.out.println("Enter a description: ");
                             String description = sc.nextLine();
                         System.out.println("Enter 'yes' to add songs to your playlist, or enter 'done' to move on: ");
-                        //initliaze "addSong" and ArrayList "playlist"
-                            String addSong = sc.nextLine();
+                        //initliaze "cont" and ArrayList "playlist"
+                            String cont = sc.nextLine();
                             ArrayList<Song> playlist = new ArrayList<>();
-                            while (!addSong.equalsIgnoreCase("done")){              //NOTE: method .equalsIgnoreCase; a quicker way to compare strings and ignore differences in letter cases
-                                if (addSong.equalsIgnoreCase("yes")){
+                            while (!cont.equalsIgnoreCase("done")){              //NOTE: method .equalsIgnoreCase; a quicker way to compare strings and ignore differences in letter cases
+                                if (cont.equalsIgnoreCase("yes")){
                                     //prompt for info
                                         System.out.print("Title: ");
                                             //sc.nextLine();
@@ -73,12 +73,12 @@ public class Main{
                                         System.out.print("Artist Name: ");
                                             String artistP = sc.nextLine();
                                     //create object of song
-                                        Song playlistSong = new Song(titleP, artistP);
-                                    //add Song object to "playlist" list
-                                        playlist.add(playlistSong);
+                                            Song playlistSong = new Song(titleP, artistP);
+                                        //add Song object to "playlist" list
+                                            playlist.add(playlistSong);
                                 }
                                 System.out.print("Add another song? ");
-                                addSong = sc.nextLine();
+                                cont = sc.nextLine();
                             }
                     
                     //create object of class Playlist
@@ -104,15 +104,19 @@ public class Main{
                                 }
                         System.out.println(" ");
                         System.out.print("Enter id # : ");
-                        int idP = sc.nextInt();
+                        int playlistId = sc.nextInt();
                         for (int p=0; p<=allPlaylists.size(); p++) {
-                            if (allPlaylists.get(p).getId() == idP) {
+                            if (allPlaylists.get(p).getId() == playlistId) {
                                 //prompt for info
                                     System.out.print("Enter song title: ");
                                         title = sc.nextLine();
+                                        sc.nextLine();
                                     System.out.print("Enter artist name: ");
                                         artist = sc.nextLine();
-                                allPlaylists.get(p).addSong(title, artist);
+                                //create Song object
+                                    Song song = new Song(title, artist);
+
+                                allPlaylists.get(p).addSong(song);
                             }
                         }
 
@@ -125,9 +129,9 @@ public class Main{
                             System.out.println("2. List songs from a playlist");
                             System.out.println("3. Return to main menu");
                             System.out.print("Choice #: ");
-                            int option3 = sc.nextInt();
+                            int option4 = sc.nextInt();
                         //switch statement
-                            switch(option3){
+                            switch(option4){
                                 default:
                                     System.out.println("Invalid Entry");
                                 case 1:                                                                     //list all individual songs
@@ -147,16 +151,16 @@ public class Main{
                                             }
                                         }
                                     //choose a playlist
-                                        System.out.print("Enter id #: ");
+                                        /* System.out.print("Enter id #: ");
                                         int chosenPlaylist = sc.nextInt();
                                         for (int p=0; p<=allPlaylists.size(); p++){
                                             while(p<allPlaylists.size()){
                                                 if (allPlaylists.get(p).getId() == chosenPlaylist){
-                                                    System.out.println(allPlaylists.get(p).listSongs());
+                                                    System.out.println(allPlaylists.get(p).displaySongs());     //calls the listSongs method for that playlist
                                                 }
                                                 p++;
                                             }
-                                        }
+                                        } */
                                 break;
                                 case 3:
 
@@ -179,9 +183,9 @@ public class Main{
                         System.out.println("2. Search by artist");
                         System.out.println("3. Return to main menu");
                         System.out.print("Choice #");
-                        int option2 = sc.nextInt();
+                        int option6 = sc.nextInt();
             
-                        switch(option2){
+                        switch(option6){
                             default:                                                         //default case
                                 System.out.println("Invalid Entry");
                                 break;
@@ -231,9 +235,9 @@ public class Main{
                         System.out.println("1. Delete a downloaded song");
                         System.out.println("2. Delete from a playlist");
                         System.out.print("Choice #");
-                        int option3 = sc.nextInt();
+                        int option7 = sc.nextInt();
 
-                        switch(option3){
+                        switch(option7){
                             default:                                                       // default case
                                 System.out.println(" ");
                                 System.out.println("Invalid Entry");
@@ -244,15 +248,23 @@ public class Main{
                                     int deleteSong = sc.nextInt();
 
                                 // delete song from "songs" list
-                                    for (int d=0; d<=songs.size(); d++){
-                                        if (songs.get(d).getId() == deleteSong){
-                                            songs.remove(d);
-                                        } else if (false) {System.out.println("There is no song with this id #.");}
-                                        d++;  
+                                    boolean found = false;
+                                    for (int d=0; d<songs.size(); d++){
+                                        while (d<songs.size()){
+                                            if (songs.get(d).getId() == deleteSong){
+                                                songs.remove(d);
+                                                found = true;
+                                            } else {
+                                                found = false;
+                                            }
+                                            d++;
+                                        }  
                                     }
 
                                 //statement
-                                    System.out.println("Song deleted.");
+                                    if (found)  {System.out.println("Song deleted.");}
+                                    else if (!found)  {System.out.println("There is no song with this id #.");}
+                                    
 
                                 break;
                             case 2:                    
