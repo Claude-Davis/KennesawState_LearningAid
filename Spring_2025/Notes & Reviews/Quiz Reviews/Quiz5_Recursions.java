@@ -1,59 +1,30 @@
+/* RECURSION
+    ...is a process where a method calls itself in order to solve a smaller version of the origin problem.abstract 
 
+    2 Parts:
+        1. Base Case - the condition that stops the recursion
+        2. Recursive Case - when the functino calls itself
 
-/* # FUNCTION STACK (aka CALL STACK)
-        - A data structure used to manage function calls. Trackswhich method is currently running and what happens when it is completed.
-
-    ## Visualization / The Order of the Stack
-        1. Each newly called method is stacked on top of the previously called method.
-        2. As the method finishes, it is removed from the stack until the stack becomes empty.
-
-    ## LIFO (Last In, First Out)
-        - LIFO describes the order at which information travels
 */
 
+import java.util.Scanner;
 
 public class Quiz5_Recursions{
-    static void Method2(){                               // method 2
-        System.out.println("Method 2 was called");
+    public static void main(String[] args){                    //example using factorial : formula -> n! = n * (n-1) * (n-2) * ...
+        Scanner scan = new Scanner (System.in);
+
+        System.out.print("Input a number: ");
+
+        int num1 = scan.nextInt();
+        int result = factorial(num1);
+        
+        System.out.println("Factorial of " + num1 + " is " + result + ".");
     }
 
-    static void Method1(){
-         Method2(); //This method is pushed onto the "stack" (bcs it has been called)
-        System.out.println("Method 1 was called");               //method 1
-    }
-
-    ///
-
-    public static void main (String[] args){
-        // Function Stack Example 1
-                Method1();  //This method is pushed onto the "stack" (bcs it has been called)
-                Method2();  //Now this method is added to the stack
-
-                System.out.println(" ");
-                //as each method finishes running, it is removed from the stack
-
-        // Function Stack Example 2
-            System.out.println("Main starts");
-            functionA();
-            System.out.println("Main ends");
-    }
-
-    ///
-
-    static void functionA() {
-        System.out.println("Function A starts");
-        functionB();
-        System.out.println("Function A ends");
-    }
-
-    static void functionB() {
-        System.out.println("Function B starts");
-        functionC();
-        System.out.println("Function B ends");
-    }
-
-    static void functionC() {
-        System.out.println("Function C starts");
-        System.out.println("Function C ends");
+    public static int factorial(int n){
+        if (n == 1) {                               //the Base Case
+            return 1;
+        }
+        return n * factorial(n-1);                  //the Recursive Case
     }
 }

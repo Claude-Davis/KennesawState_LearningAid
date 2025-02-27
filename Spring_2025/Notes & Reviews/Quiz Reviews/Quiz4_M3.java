@@ -27,7 +27,7 @@
   }
   
 
-  class Quiz4 {
+  class Quiz4_M3 {
     public static void main(String[] args) {
       addingMachine myMachine = new addingMachine();
       System.out.println(myMachine.do_stuff3());
@@ -58,7 +58,7 @@
     }
   }
   
-  class Quiz4 {
+  class Quiz4_M3 {
     public static void main(String[] args) {
       ArrayList<Media> myMedia = new ArrayList<Media>();
       myMedia.add(new Media());
@@ -95,7 +95,7 @@
     }
   }
   
-  class Quiz4 {
+  class Quiz4_M3 {
     public static void main(String[] args) {
       Calculator myCalculator = new Calculator();
     }
@@ -127,7 +127,7 @@
     }
   }
   
-  class Quiz4 {
+  class Quiz4_M3 {
     public static void main(String[] args) {
       Horse myHorse = new Horse();
       int ret1 = myHorse.do_stuff1();
@@ -159,7 +159,7 @@ class Parent{
       return 3;
     }
   }
-  class Quiz4 {
+  class Quiz4_M3 {
     public static void Main (String[] args) {
       Parent var1=new Parent();
       ChildOne var2=new ChildOne();
