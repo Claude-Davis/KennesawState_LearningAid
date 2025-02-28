@@ -15,13 +15,13 @@ public class Quiz5_Recursions{
 
         System.out.print("Input a number: ");
 
-        int num1 = scan.nextInt();
-        int result = factorial(num1);
+        long num1 = scan.nextLong();
+        long result = factorial(num1);
         
         System.out.println("Factorial of " + num1 + " is " + result + ".");
     }
 
-    public static int factorial(int n){
+    public static long factorial(long n){
         if (n == 1) {                               //the Base Case
             return 1;
         }
