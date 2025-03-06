@@ -21,7 +21,14 @@ class DNALib{
     //method 3
     static String inverser(String inverse)    {
         for (int l=0; l<inverse.length(); l++){
-            //
+            if (inverse.get(l).equalsIgnoreCase("A")){
+                //
+            }
         }
+    }
+
+    //method 4
+    static String translator(String translation){
+        
     }
 }
