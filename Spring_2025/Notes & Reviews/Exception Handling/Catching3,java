@@ -39,12 +39,13 @@ class Catching3{
 //UPDATED CODE
                 try{
                 numArray[x] = input_number;
+                }
+                catch(ArrayIndexOutOfBoundsException entries){   //"entries" is a variable of a specific type of exception
+                    System.out.println("You can only enter 5 numbers.");
+                    input_number= -1; //this line meets the quit function instead of taking in the user's extra input
+                }
                 x++;
                 current_entries++;
-                }
-                catch(Exception entries){
-                    System.out.println("You can only enter 5 numbers.");
-                }
 //
 
             }
