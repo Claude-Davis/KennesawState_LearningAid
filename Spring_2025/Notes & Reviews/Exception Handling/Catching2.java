@@ -52,3 +52,11 @@ class Catching2{
         System.out.println("Average of numbers is " + theAvg);
     }
 }                           //This program allows the user to immediately input -1 without resulting in the program crashing. instead, the user is told the problem.
+
+/* another potential issue occurs because of lines 4 and 5, at line 41: numArray[x] = input_number;.
+    because the array size is set to 5, if the user inputs more than 5, the program crashes and this exception message is displayed: 
+
+    "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+        at Catching2.readNumber(Catching2.java:41)
+        at Catching2.main(Catching2.java:50)"
+*/
