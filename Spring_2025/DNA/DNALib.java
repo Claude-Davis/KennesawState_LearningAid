@@ -18,12 +18,14 @@ class DNALib{
 
     //method 1
     public static boolean validator (String valid){
-        if (valid.length()<1){ return false;}
+        valid = valid.toUpperCase();
+        if (valid.isEmpty()){ return false;}
         if (valid.length()%3 != 0){ return false;}
-        if (!valid.matches("AGCT")){ return false;}
+        char first = valid.charAt(0);
+        if (first != 'A' || first != 'C' || first != 'G' || first != 'T'){ return false;}
         return validator(valid.substring(1));
     }
-    /*
+    
     //method 2
     public static String reverser(String reverse)    {return reverse;}
 
@@ -39,5 +41,5 @@ class DNALib{
     //method 4
     public static String translator(String translation){
         
-    } */
+    }
 }
