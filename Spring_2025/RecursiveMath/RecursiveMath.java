@@ -11,7 +11,7 @@ public class RecursiveMath{
             //menu
             System.out.println("1. Multiply 2 numbers");
             System.out.println("2. Divide 2 numbers");
-            System.out.println("3. Mod 2 numbers");;
+            System.out.println("3. Mod 2 numbers");
             System.out.println("4. Echo sentence");
             System.out.println("5. Determine if reverse");
             System.out.println("6. Quit");
@@ -48,7 +48,7 @@ public class RecursiveMath{
                     System.out.println("Your modulus is " + recursiveRemainder(num1, num2));
                     System.out.println(" ");
                     break;
-                case 4:
+                case 4:                                             //echo method
                     System.out.print("Enter your sentence: ");
                         scan.nextLine();
                         String sentence = scan.nextLine();
@@ -59,7 +59,7 @@ public class RecursiveMath{
                     System.out.println(" ");
                     System.out.println(" ");
                     break;
-                case 5:
+                case 5:                                             //reverse
                     System.out.print("Enter a sentence: ");
                         scan.nextLine();
                         sentence = scan.nextLine();
