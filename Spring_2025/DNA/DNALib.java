@@ -20,10 +20,7 @@ class DNALib{
     public static boolean validator (String valid){
         if (valid.length()<1){ return false;}
         if (valid.length()%3 != 0){ return false;}
-        if (!valid.substring(0,1).equals("A")){ return false;}
-            else if (!valid.substring(0,1).equals("G")){ return false;}
-            else if (!valid.substring(0,1).equals("C")){ return false;}
-            else if (!valid.substring(0,1).equals("T")){ return false;}
+        if (!valid.matches("AGCT")){ return false;}
         return validator(valid.substring(1));
     }
     /*
