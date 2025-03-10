@@ -10,7 +10,7 @@ class DNALib {
             String sequence = scan.nextLine();
         
         if (validator(sequence) == false)  { System.out.println("Your DNA sequence is not valid.");}
-        if (validator(sequence) == false)  {
+        if (validator(sequence) == true)  {
             sequence = reverser(sequence);
             System.out.println(translator(sequence));
         }
@@ -25,12 +25,13 @@ class DNALib {
             char first = valid.charAt(0);
         if (first != 'A' && first != 'C' && first != 'G' && first != 'T'){ return false;}
         if (valid.length() == 1){ return true;}  //once/when the length of the [sub]string reaches 1, then if the final char is an accepted letter, the method returns true
-        return validator(valid.substring(1)); //the method is called--with the String being reduced by 1 char each time--until the length of the Strinhg is 1
+        return valid.length() == 1 || validator(valid.substring(1)); //the method is called--with the String being reduced by 1 char each time--until the length of the Strinhg is 1
     }
     
     //method 2
     public static String reverser(String reverse)    {
-        return reverser(reverse.substring(reverse.length()-1));
+        if (reverse.length()<1){ return "Invalid";}
+        return reverse.charAt(reverse.length()-1) + reverser(reverse.substring(0, reverse.length()-1));
     }
 
     //method 3
@@ -44,185 +45,128 @@ class DNALib {
             String t = translation.substring(0,3);
             switch(t){
                 case "CGA":
-                    String aminoacid = "R";
-                    break;
+                    return "R";
                 case "GCC":
-                    aminoacid = "A";
-                    break;
+                    return "A";
                 case "TGC":
+                    return "C";
                 case "TGT":
-                    aminoacid = "C";
-                    break;
+                    return "C";
                 case "GAC":
-                    aminoacid = "D";
-                    break;
+                    return "D";
                 case "GAT":
-                    aminoacid = "D";
-                    break;
+                    return "D";
                 case "GAA":
-                    aminoacid = "E";
-                    break;
+                    return "E";
                 case "GAG":
-                    aminoacid = "E";
-                    break;
+                    return "E";
                 case "TTC":
-                    aminoacid = "F";
-                    break;
+                    return "F";
                 case "TTT":
-                    aminoacid = "F";
-                    break;
+                    return "F";
                 case "GGA":
-                    aminoacid = "G";
-                    break;
+                    return "G";
                 case "GGC":
-                    aminoacid = "G";
-                    break;
+                    return "G";
                 case "GGG":
-                    aminoacid = "G";
-                    break;
+                    return "G";
                 case "GGT":
-                    aminoacid = "G";
-                    break;
+                    return "G";
                 case "CAC":
-                    aminoacid = "H";
-                    break;
+                    return "H";
                 case "CAT":
-                    aminoacid = "H";
-                    break;
+                    return "H";
                 case "ATA":
-                    aminoacid = "I";
-                    break;
+                    return "I";
                 case "ATC":
-                    aminoacid = "I";
-                    break;
+                    return "I";
                 case "ATT":
-                    aminoacid = "T";
-                    break;
+                    return "T";
                 case "AAA":
-                    aminoacid = "K";
-                    break;
+                    return "K";
                 case "AAG":
-                    aminoacid = "K";
-                    break;
+                    return "K";
                 case "CTA":
-                    aminoacid = "L";
-                    break;
+                    return "L";
                 case "CTC":
-                    aminoacid = "L";
-                    break;
+                    return "L";
                 case "CTG":
-                    aminoacid = "L";
-                    break;
+                    return "L";
                 case "CTT":
-                    aminoacid = "L";
-                    break;
+                    return "L";
                 case "TTA":
-                    aminoacid = "-";
-                    break;
+                    return "-";
                 case "TTG":
-                    aminoacid = "L";
-                    break;
+                    return "L";
                 case "ATG":
-                    aminoacid = "M";
-                    break;
+                    return "M";
                 case "AAT":
-                    aminoacid = "N";
-                    break;
+                    return "N";
                 case "AAC":
-                    aminoacid = "N";
-                    break;
+                    return "N";
                 case "CCA":
-                    aminoacid = "P";
-                    break;
+                    return "P";
                 case "CCC":
-                    aminoacid = "P";
-                    break;
+                    return "P";
                 case "CCG":
-                    aminoacid = "P";
-                    break;
+                    return "P";
                 case "CCT":
-                    aminoacid = "P";
-                    break;
+                    return "P";
                 case "CAA":
-                    aminoacid = "Q";
-                    break;
+                    return "Q";
                 case "CAG":
-                    aminoacid = "Q";
-                    break;
+                    return "Q";
                 case "AGA":
-                    aminoacid = "R";
-                    break;
+                    return "R";
                 case "AGG":
-                    aminoacid = "R";
-                    break;
+                    return "R";
                 case "CGC":
-                    aminoacid = "R";
-                    break;
+                    return "R";
                 case "CGG":
-                    aminoacid = "R";
-                    break;
+                    return "R";
                 case "CGT":
-                    aminoacid = "R";
-                    break;
+                    return "R";
                 case "AGC":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "AGT":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "TCA":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "TCC":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "TCG":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "TCT":
-                    aminoacid = "S";
-                    break;
+                    return "S";
                 case "ACA":
-                    aminoacid = "T";
-                    break;
+                    return "T";
                 case "ACC": 
-                    aminoacid = "T";
-                    break;
+                    return "T";
                 case "ACG": 
-                    aminoacid = "T";
-                    break;
+                    return "T";
                 case "ACT": 
-                    aminoacid = "T"; 
-                    break; 
+                    return "T";  
                 case "GTA": 
-                    aminoacid = "V";
-                    break;
+                    return "V";
                 case "GTC": 
-                    aminoacid = "V";
-                    break;
+                    return "V";
                 case "GTG": 
                 case "GTT": 
-                    aminoacid = "V"; 
-                    break; 
+                    return "V";  
                 case "TGG": 
-                    aminoacid = "W"; 
-                    break; 
+                    return "W";  
                 case "TAC":
-                    aminoacid = "Y";
-                    break;
+                    return "Y";
                 case "TAT": 
-                    aminoacid = "Y"; 
-                    break; 
+                    return "Y";  
                 case "TAA":
-                    aminoacid = "-";
-                    break;
+                    return "-";
                 case "TAG":
-                    aminoacid = "-";
-                    break;
+                    return "-";
                 case "TGA": 
-                    aminoacid = "-"; 
-                    break;
+                    return "-"; 
             }
         }
+        return " ";
     }
 }
