@@ -44,8 +44,8 @@ class Lab8{
                     System.out.println(" ");
                     break;
             }
-            System.out.println("Shutting off...");
         }
+        System.out.println("Shutting off...");
     }
 
     //method
