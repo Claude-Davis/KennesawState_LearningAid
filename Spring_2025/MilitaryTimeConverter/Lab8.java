@@ -31,22 +31,7 @@ class Lab8{
                     System.out.print("Enter your end timestamp: ");
                     String end = scan.nextLine();
 
-                    //validity check : format
-                    if ((start.length() != 8) || (end.length() != 8)){
-                        System.out.println("Timestamp must be in format HH:MM:SS");
-                    }
-
-                    //validity check : number ranges
-                    if ((0 > hours) || (0 > hours2)) throw new InvalidTimeException("Hours must be greater than or equal to 0.");
-                    if ((hours > 23) || (hours2 > 23)) throw new InvalidTimeException("Hours must be less than 24.");
-
-                    if ((0 > minutes) || (0 > minutes2)) throw new InvalidTimeException("Minutes must be greater than or equal to 0.");
-                    if ((minutes > 60) || (minutes2 > 60)) throw new InvalidTimeException("Minutes must be less than 60.");
-
-                    if ((0 > seconds) || (0 > seconds2)) throw new InvalidTimeException("Seconds must be greater than or equal to 0.");
-                    if ((seconds > 60) || (seconds2 > 60)) throw new InvalidTimeException("Seconds must be less than 60.");
-
-                    differenceInSeconds(start, end);
+                    System.out.println("The difference between " + start + " and " + end + " is " + differenceInSeconds(start, end) + " seconds.");
 
                     System.out.println(" ");
                     break;
@@ -55,7 +40,10 @@ class Lab8{
     }
 
     //method
-    static int differenceInSeconds(String start, String end) throws InvalidTimeException{
+    static int differenceInSeconds(String start, String end) throws InvalidTimeException, NumberFormatException{
+            //validity check : format
+            if ((start.length() != 8) || (end.length() != 8))  { System.out.println("Timestamp must be in format HH:MM:SS"); }
+
             //string to int conversion: start
                     String h = start.substring(0,2); //creates a substring from start of only the numbers in the hour section
                     int hours = Integer.parseInt(h);  //converts substring h to integer value
@@ -76,27 +64,15 @@ class Lab8{
                     String s2 = end.substring(6);  //creates a substring from start of only the numbers in the seconds section
                     int seconds2 = Integer.parseInt(s2);  //converts substring h to integer value
 
-                        //validity check : number ranges
-                if ((0 > hours) || (0 > hours2)){
-                    System.out.println("Hours must be greater than or equal to 0.");
-                } 
-                if ((hours > 23) || (hours2 > 23)){
-                    System.out.println("Hours must be less than 24.");
-                }
+                //validity check : number ranges
+                    if ((0 > hours) || (0 > hours2)) throw new InvalidTimeException("Hours must be greater than or equal to 0.");
+                    if ((hours > 23) || (hours2 > 23)) throw new InvalidTimeException("Hours must be less than 24.");
 
-                if ((0 > minutes) || (0 > minutes2)){
-                    System.out.println("Minutes must be greater than or equal to 0.");
-                }
-                if ((minutes > 60) || (minutes2 > 60)){
-                    System.out.println("Minutes must be less than 60.");
-                }
+                    if ((0 > minutes) || (0 > minutes2)) throw new InvalidTimeException("Minutes must be greater than or equal to 0.");
+                    if ((minutes > 60) || (minutes2 > 60)) throw new InvalidTimeException("Minutes must be less than 60.");
 
-                if ((0 > seconds) || (0 > seconds2)){
-                    System.out.println("Seconds must be greater than or equal to 0.");
-                }
-                if ((seconds > 60) || (seconds2 > 60)){
-                    System.out.println("Seconds must be less than 60.");
-                }
+                    if ((0 > seconds) || (0 > seconds2)) throw new InvalidTimeException("Seconds must be greater than or equal to 0.");
+                    if ((seconds > 60) || (seconds2 > 60)) throw new InvalidTimeException("Seconds must be less than 60.");
 
 
             //hours to minutes
