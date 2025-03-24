@@ -13,7 +13,7 @@ class Lab8{
         while (option != 2){
             //menu
             System.out.println("1. Calculate diference in seconds");
-            System.out.println("Exit");
+            System.out.println("2. Exit");
             System.out.print("Enter your option: ");
             option = scan.nextInt();
 
@@ -26,16 +26,25 @@ class Lab8{
                     }
                 case 1:
                     System.out.print("Enter your start timestamp: ");
+                    scan.nextLine();
                     String start = scan.nextLine();
 
                     System.out.print("Enter your end timestamp: ");
                     String end = scan.nextLine();
 
-                    System.out.println("The difference between " + start + " and " + end + " is " + differenceInSeconds(start, end) + " seconds.");
+                    try {
+                        int difference = differenceInSeconds(start, end);
+                        System.out.println("The difference between " + start + " and " + end + " is " + difference + " seconds.");
+                    } catch (InvalidTimeException e) {
+                        System.out.println(e.getMessage());
+                    } catch (NumberFormatException e) {
+                        System.out.println("You must enter integers for the hours, minutes, and seconds.");
+                    }
 
                     System.out.println(" ");
                     break;
-            } System.out.println("Shutting off...");
+            }
+            System.out.println("Shutting off...");
         }
     }
 
