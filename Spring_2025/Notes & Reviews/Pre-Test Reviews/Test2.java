@@ -2,6 +2,8 @@
 
 
 import java.util.Scanner;
+import java.util.Arrays;
+
 public class Test2 {
     public static void main (String[] args){
         Scanner scan = new Scanner(System.in);
@@ -55,6 +57,9 @@ public class Test2 {
                     break;
                 case 4:                                                                                         // for Exceptions_Catch()
                     System.out.println("Exceptions - Catch");
+                        System.out.print("\tCreate an Array: ");
+                            int size = scan.nextInt();
+                            Exceptions_Catch(size);
 
                     System.out.println(" ");
                     System.out.println("-----");
@@ -102,22 +107,36 @@ public class Test2 {
     }
 
 
-    public static void Exceptions_Catch(){
-        Scanner scan = new Scanner (System.in);
-        try {
-            System.out.print("\t Enter a Domestic Pet: ");
-                scan.nextLine();
-                String pet = scan.nextLine();
-                pet = pet.toLowerCase();
-            if (pet.equals("dog") || pet.equals("cat") || pet.equals("bird") || pet.equals("snake") || pet.equals("lizard") || pet.equals("fish") || pet.equals("hamster")){
-                System.out.println("Your pet is a " + pet + ".");
-                System.out.print("Enter the pet's weight: ");
-                    double weight = scan.nextDouble();
-                    double foodAmount = weight * 0.063;
+    public static void Exceptions_Catch(int size){
+        Scanner scan = new Scanner(System.in);
+
+        int userArray[] = new int[size];
+        System.out.println("Add Numbers to Your Array: ");
+            int nums = 1;
+        while (nums!=0){
+            if (nums!=0){
+                try {    
+                nums = scan.nextInt();
+                userArray[size] = nums;
+                int difference = userArray[0];
                 
+                for (int n=0; n<= userArray.length; n++){
+                    //create the subtraction equation
+                    String equation = (userArray[n] + " - ");
+                    equation.substring(0,(equation.length()-3));
+
+                    //find the difference of the array
+                    difference -= userArray[n+1];
+
+                    //print the equation and answer
+                    System.out.print(equation + " = " + difference);
+                }
+                
+
+                } catch (Exception invalid){
+                    System.out.println("You can only have " + size + " numbers in your array.");
+                }
             }
-        } catch (Exception p){
-            //
         }
     }
     public static void Exceptions_Throw(){
