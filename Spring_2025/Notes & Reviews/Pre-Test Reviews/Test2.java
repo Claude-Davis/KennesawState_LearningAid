@@ -76,6 +76,7 @@ public class Test2 {
                     break;
             }
         }
+        System.out.println("Bye!");
     }
 
     public static void Recursions_FunctionStack(int n){
@@ -102,7 +103,22 @@ public class Test2 {
 
 
     public static void Exceptions_Catch(){
-        //
+        Scanner scan = new Scanner (System.in);
+        try {
+            System.out.print("\t Enter a Domestic Pet: ");
+                scan.nextLine();
+                String pet = scan.nextLine();
+                pet = pet.toLowerCase();
+            if (pet.equals("dog") || pet.equals("cat") || pet.equals("bird") || pet.equals("snake") || pet.equals("lizard") || pet.equals("fish") || pet.equals("hamster")){
+                System.out.println("Your pet is a " + pet + ".");
+                System.out.print("Enter the pet's weight: ");
+                    double weight = scan.nextDouble();
+                    double foodAmount = weight * 0.063;
+                
+            }
+        } catch (Exception p){
+            //
+        }
     }
     public static void Exceptions_Throw(){
         //
