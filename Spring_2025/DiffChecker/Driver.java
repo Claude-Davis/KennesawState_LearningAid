@@ -1,6 +1,7 @@
 package DiffChecker;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class Driver {
     public static void main (String[] args){
@@ -22,7 +23,7 @@ public class Driver {
         System.out.println("Program Complete");
     }
 
-    static String diff(File, File){
+    static String diff(String file1, String file2){
         //
     }
 }
