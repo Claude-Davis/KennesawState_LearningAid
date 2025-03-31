@@ -1,5 +1,7 @@
 package FYEMUS_Music_Player;
 
-public class FYEMusicReaderException {
-    
+public class FYEMusicReaderException extends FYEMusicException {
+    public FYEMusicReaderException(String e){
+        super(e);
+    }
 }
