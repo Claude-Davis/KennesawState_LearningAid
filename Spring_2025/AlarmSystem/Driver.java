@@ -2,12 +2,12 @@ package AlarmSystem;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.InputMismatchException;
+import java.util.InputMismatchException;
 
 public class Driver{
     public static void main(String[] args) throws InputMismatchException{
         Scanner scan = new Scanner (System.in);
-        ArrayList<Alarm> allAlarms = new Arraylist<>();
+        ArrayList<Alarm> allAlarms = new ArrayList<>();
 
         //title
         System.out.println("[AlarmSystem]");
