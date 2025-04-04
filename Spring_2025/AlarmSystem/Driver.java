@@ -2,11 +2,12 @@ package AlarmSystem;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.InputMismatchException;
 
 public class Driver{
-    public static void main(String[] args){
+    public static void main(String[] args) throws InputMismatchException{
         Scanner scan = new Scanner (System.in);
-        ArrayList<Alarms> allAlarms = new Arraylust<>();
+        ArrayList<Alarm> allAlarms = new Arraylist<>();
 
         //title
         System.out.println("[AlarmSystem]");
@@ -29,20 +30,28 @@ public class Driver{
                 case 1:                                                                 //create an alarm
                     // prompt for info
                     System.out.print("Enter alarm name: ");
-                        String name = scan.nextLine();
+                    scan.nextLine();
+                    String name = scan.nextLine();
+
+                        int seconds = 0; //"seconds" initialized
                     try{
                         System.out.print("Enter alarm timer in seconds: ");
-                        int seconds = scan.nextInt();
+                        seconds = scan.nextInt();
                     } catch (InputMismatchException e){
                         System.out.println("Invalid timer: Timer must be a whole number.");
-                    } finally{
-                        scan.close();
-                    }
+                    } /* finally{
+                        scan.close();           //NOTE: cannshould NOT use this w/in a loop
+                    } */
 
                     //create object
                     Alarm x = new Alarm(name, seconds);
+
+                    //start alarm
+                    x.start();
+
                     //add object to arraylist
                     allAlarms.add(x);
+
                     //call toString() method
                     x.toString();
 
@@ -51,7 +60,7 @@ public class Driver{
 
                 case 2:                                                             //show all alarms
                     System.out.println("Here are all the alarms running:");
-                    for (int a=0; a<allAlarms.length(); a++){
+                    for (int a=0; a<allAlarms.size(); a++){
                         allAlarms.get(a).toString();
                         a++;
                     }
@@ -67,6 +76,7 @@ public class Driver{
                     break;
             }
         }
+        scan.close();
         System.out.print("Shutting off...");
     }
 }
