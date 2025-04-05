@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class Driver{
-    public static void main(String[] args) throws InputMismatchException{
+    public static void main(String[] args) throws InputMismatchException, NumberFormatException{
         Scanner scan = new Scanner (System.in);
         ArrayList<Alarm> allAlarms = new ArrayList<>();
 
@@ -55,23 +55,13 @@ public class Driver{
                         x.start();
                     } catch (InputMismatchException e){
                         System.out.println("Invalid timer: Timer must be a whole number only.");
+                    } catch (NumberFormatException e2) {
+                        System.out.println("Invalid timer: Timer must be a whole number only.");
                     }
 
                     /* finally{
                         scan.close();           //NOTE: cannshould NOT use this w/in a loop
                     } */
-
-                    //create object
-                    Alarm x = new Alarm(name, seconds);
-
-                    //start alarm
-                    x.start();
-
-                    //add object to arraylist
-                    allAlarms.add(x);
-
-                    //call toString() method
-                    x.toString();
 
                     System.out.println(" ");
                     break;

@@ -13,15 +13,6 @@ class Alarm extends Thread{
         nextId++;
     }
 
-    public int getTimer(){
-        return timer * 1000;
-    }
-
-    public String getName(){
-        if (name.equals("")){ return "Alarm X";}
-        else { return name; }
-    }
-
     @Override
     public void run(){
         try {
