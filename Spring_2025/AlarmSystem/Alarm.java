@@ -6,7 +6,7 @@ class Alarm extends Thread{
     private int id;
     private static int nextId = 1;
 
-    public class Alarm(String name, int timer){
+    public Alarm(String name, int timer){
         this.name = name;
         this.timer = timer;
         this.id = nextId;

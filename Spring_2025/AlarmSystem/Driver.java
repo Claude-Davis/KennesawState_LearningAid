@@ -33,13 +33,31 @@ public class Driver{
                     scan.nextLine();
                     String name = scan.nextLine();
 
-                        int seconds = 0; //"seconds" initialized
+                        String secondsInput; //"secondsInput" initialized
+                        int seconds; //"seconds" initialized
                     try{
                         System.out.print("Enter alarm timer in seconds: ");
-                        seconds = scan.nextInt();
+                        secondsInput = scan.nextLine();
+
+                        //convert secondsInput to int
+                        seconds = Integer.parseInt(secondsInput); //if this fails, the error will be caught and the line under 'catch' will be printed
+
+                        //create object
+                        Alarm x = new Alarm(name, seconds);
+
+                        //add object to arraylist
+                        allAlarms.add(x);
+
+                        //call toString() method
+                        x.toString();
+
+                        //start alarm
+                        x.start();
                     } catch (InputMismatchException e){
-                        System.out.println("Invalid timer: Timer must be a whole number.");
-                    } /* finally{
+                        System.out.println("Invalid timer: Timer must be a whole number only.");
+                    }
+
+                    /* finally{
                         scan.close();           //NOTE: cannshould NOT use this w/in a loop
                     } */
 
