@@ -1,25 +1,30 @@
 package AlarmSystem;
 
 class Alarm extends Thread{
-    private int timer; //note: stored in milliseconds
+    private int timer; //note: will be stored in milliseconds
     private String name;
     private int id;
     private static int nextId = 1;
 
-    public Alarm(String name, int timer){
-        this.name = name;
-        this.timer = timer;
+    public Alarm(String name, int seconds){
         this.id = nextId;
         nextId++;
+
+        if (name.isEmpty()){ this.name = "Alarm " + id;
+        } else { this.name = name; }
+        this.timer = seconds * 1000;  //conversion of seconds to milliseconds
     }
 
     @Override
     public void run(){
         try {
-            Thread.sleep(1000);
-            timer -= 1000;
-            if (timer == (10000)) { System.out.println( name + " will go off in 10 seconds."); }
-            if (timer == 0) { System.out.println(name + " has gone off."); }
+            while (timer > 0){
+                Thread.sleep(1000);
+                timer -= 1000;
+                if (timer == (10000)) { System.out.println( name + " will go off in 10 seconds."); }
+            }
+            System.out.println(name + " has gone off.");
+            
         } catch (InterruptedException e) {
             System.out.println(name + " has been interrupted at " + (timer/1000) + " seconds.");
         }

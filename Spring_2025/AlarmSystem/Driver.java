@@ -1,5 +1,6 @@
 package AlarmSystem;
 
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -55,12 +56,11 @@ public class Driver{
                         x.start();
                     } catch (InputMismatchException e){
                         System.out.println("Invalid timer: Timer must be a whole number only.");
-                    } catch (NumberFormatException e2) {
+                    } catch (NumberFormatException e2){
                         System.out.println("Invalid timer: Timer must be a whole number only.");
                     }
-
                     /* finally{
-                        scan.close();           //NOTE: cannshould NOT use this w/in a loop
+                        scan.close();           //NOTE: should NOT use this w/in a loop
                     } */
 
                     System.out.println(" ");
@@ -84,7 +84,22 @@ public class Driver{
                     break;
             }
         }
+        System.out.println("Stopping all alarms...");
+
+        //interrupt/stop all alarms
+        for (Alarm a : allAlarms){
+            if (a.isAlive()){
+                a.interrupt(); 
+            }
+        }
+
+        //
+        try { Thread.sleep(300); //allow time for each toString() to print
+        } catch (InterruptedException e) {
+            //does nothing
+        }
         scan.close();
+        System.out.println("All alarms have been stopped.");
         System.out.print("Shutting off...");
     }
 }
