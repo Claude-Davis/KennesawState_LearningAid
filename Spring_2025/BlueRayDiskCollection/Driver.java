@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Driver {
     Scanner scan = new Scanner(System.in);
@@ -41,6 +41,9 @@ public class Driver {
                 break; 
             case 2:
                 System.out.println("Here's your current collection:");
+
+                collection.showAll();
+                
                 break;
             default:
                 if (option!=3) {System.out.println("Invalid entry"); }
