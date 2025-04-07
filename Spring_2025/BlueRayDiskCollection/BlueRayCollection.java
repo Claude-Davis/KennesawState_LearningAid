@@ -14,11 +14,10 @@ public class BlueRayCollection {
     public String showAll(){
         String fullCollection = null;
         
-        Iterator it = collection.iterator();
-
-        while(it.hasNext()){
-            fullCollection += it + "\n";
+        for (BlueRayDisk d : collection){
+            fullCollection += d.toString() + "\n";
         }
+
         return fullCollection;
     }
 }
