@@ -1,8 +1,9 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
 import java.util.LinkedList;
 
 public class Driver {
-    public static void main (String[] args){
+    public static void main (String[] args) throws InputMismatchException{
         Scanner scan = new Scanner(System.in);
         BlueRayCollection collection = new BlueRayCollection();
 
@@ -34,18 +35,15 @@ public class Driver {
 
                     //validity check of yearOfRelease
                     boolean validity = false;
-                    int year = -1;
                     int yearOfRelease = 0;
 
-                    while (validity!=true){
+                    try {
                         System.out.print("Enter year of release: ");
-                        year = scan.nextInt();
-                            if (year>0){
-                                yearOfRelease = year;
-                                validity = true;
-                            } else {
-                                System.out.println("Error: Year of release must be a whole number!");
-                            }
+                        yearOfRelease = scan.nextInt();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Error: Year of release must be a whole number!");
+                        scan.nextLine();
+                        break;
                     }
     
                     System.out.print("Enter price: $");
