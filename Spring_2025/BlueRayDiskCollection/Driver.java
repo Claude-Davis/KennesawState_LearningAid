@@ -27,12 +27,27 @@ public class Driver {
             switch(option){
                 case 1:
                     System.out.print("Enter disk title: ");
-                    scan.nextLine();
+                            scan.nextLine();
                         String title = scan.nextLine();
                     System.out.print("Enter director name: ");
                         String director = scan.nextLine();
-                    System.out.print("Enter year of release: ");
-                        int yearOfRelease = scan.nextInt();
+
+                    //validity check of yearOfRelease
+                    boolean validity = false;
+                    int year = -1;
+                    int yearOfRelease = 0;
+
+                    while (validity!=true){
+                        System.out.print("Enter year of release: ");
+                        year = scan.nextInt();
+                            if (year>0){
+                                yearOfRelease = year;
+                                validity = true;
+                            } else {
+                                System.out.println("Error: Year of release must be a whole number!");
+                            }
+                    }
+    
                     System.out.print("Enter price: $");
                         double cost = scan.nextDouble();
 
@@ -45,7 +60,7 @@ public class Driver {
                     break; 
 
                 case 2:
-                    System.out.println("Here's your current collection:");
+                    System.out.println("Here is your current collection:");
 
                     System.out.println(collection.showAll());
 

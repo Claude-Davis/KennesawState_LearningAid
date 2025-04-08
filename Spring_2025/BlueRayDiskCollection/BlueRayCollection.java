@@ -4,20 +4,36 @@ import java.util.Iterator;
 public class BlueRayCollection {
     private BlueRayDisk head;
 
-    LinkedList<BlueRayDisk> collection = new LinkedList<BlueRayDisk>();
+    public BlueRayCollection(){
+        this.head = null;
+    }
 
     public void addDisk(String title, String director, int yearOfRealease, double cost){
         BlueRayDisk newDisk = new BlueRayDisk(title, director, yearOfRealease, cost);
-        collection.add(newDisk);
+        if (head==null){
+            head = newDisk;
+        } else {
+            BlueRayDisk collection = head;
+            while (collection.next != null){
+                collection = collection.next;
+            }
+            collection.next = newDisk;
+        }
     }
 
     public String showAll(){
-        String fullCollection = null;
-        
-        for (BlueRayDisk d : collection){
-            fullCollection += d.toString() + "\n";
+        if (head==null){
+            return " ";
         }
 
-        return fullCollection;
+        StringBuilder fullCollection = new StringBuilder();
+        BlueRayDisk collection = head;
+
+        while (collection != null){
+            fullCollection.append(collection.toString()).append("\n");
+            collection = collection.next;
+        }
+
+        return fullCollection.toString();
     }
 }
