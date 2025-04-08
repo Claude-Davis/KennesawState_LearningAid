@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
-import java.util.LinkedList;
 
 public class Driver {
     public static void main (String[] args) throws InputMismatchException{
@@ -20,10 +19,25 @@ public class Driver {
             System.out.println("2. See Collection");
             System.out.println("3. Quit program");
             
-            System.out.print("Enter option: ");
-            option = scan.nextInt();
+            try{ 
+                System.out.print("Enter option: ");
+                option = scan.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("Invalid entry");
+                scan.nextLine();
 
-            System.out.println(" ");
+                System.out.println(" ");
+
+                //menu
+                System.out.println("1. Add to collection");
+                System.out.println("2. See Collection");
+                System.out.println("3. Quit program");
+            
+                System.out.print("Enter option: ");
+                option = scan.nextInt();
+            }
+
+            //System.out.println(" ");
 
             switch(option){
                 case 1:
@@ -63,7 +77,8 @@ public class Driver {
                     break;
 
                 default:
-                    if (option!=3) {System.out.println("Invalid entry"); }
+                    if (option!=3) {System.out.print("Invalid entry"); }
+                    System.out.println(" ");
                     break;
             }
         }
