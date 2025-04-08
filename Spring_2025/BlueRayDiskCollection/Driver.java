@@ -34,9 +34,7 @@ public class Driver {
                         String director = scan.nextLine();
 
                     //validity check of yearOfRelease
-                    boolean validity = false;
                     int yearOfRelease = 0;
-
                     try {
                         System.out.print("Enter year of release: ");
                         yearOfRelease = scan.nextInt();
