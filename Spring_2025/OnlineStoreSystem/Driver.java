@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Driver {
     public static void main(String[] args){
         Scanner scan = new Scanner (System.in);
         Inventory inventory = new Inventory();
+        ArrayList<Processor> allProcessors = new ArrayList<Processor>(); 
 
         //objects of Item
                 String desc = "T-shirt";
@@ -55,9 +57,38 @@ public class Driver {
             System.out.println("Purchasers are done working. A total of " + pending + " items are awaiting processing.");
 
         
+            System.out.println(" ");
+
+        
         //Processors
         System.out.print("Create how many processors? ");
             int quantityOfProcessors = scan.nextInt();
+        System.out.println("OrderProcessors created. Press 'enter' to start processing orders...");
+        
+        scan.nextLine();
+        
+            //create Processor objects
+            int count = 0;
+            while (count < quantityOfProcessors){
+                Processor newProcessor = new Processor(inventory);
+                allProcessors.add(newProcessor);
+                count++;
+            }
+
+            //start Processor objects
+            for (Processor p : allProcessors){
+                p.start();
+            }
+
+            System.out.println("All OrderProcessors are done processing order.");
+            System.out.println(" ");
+
+        
+        //print inventory's balance and itemsProcessed
+        System.out.println(inventory.getItemsProcessed() + " items were processed for a total of $" + inventory.retrieveBalance());
+
+
+        System.out.println("Simulation complete.");
     }
 
 }
