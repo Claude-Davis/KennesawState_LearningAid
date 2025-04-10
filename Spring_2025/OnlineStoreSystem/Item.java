@@ -7,4 +7,12 @@ public class Item {
         this.cost = cost;
     }
 
+    public String getDescription(){
+        return description;
+    }
+
+    public double getCost(){
+        return cost;
+    }
+
 }

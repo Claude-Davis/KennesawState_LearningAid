@@ -17,6 +17,11 @@ public class Purchaser extends Thread {
 
     @Override
     public void run(){
-        //
+        System.out.println("Purchaser " + id + " starting purchases...");
+            for (int i=0; i<itemsToProcess; i++){
+                queue.addItem(item);
+                itemsProcessed++;
+            }
+        System.out.println("Purchaser " + id + " purchased " + itemsProcessed + " " + item.getDescription());
     }
 }

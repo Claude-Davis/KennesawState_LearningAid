@@ -15,6 +15,11 @@ public class Processor extends Thread{
 
     @Override
     public void run(){
-        //
+        if (queue == null){
+            break;
+        } else{
+            //
+        }
+        queue.incrementBalance(item.getCost);
     }
 }
