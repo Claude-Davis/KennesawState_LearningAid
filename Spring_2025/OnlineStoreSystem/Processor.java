@@ -15,11 +15,17 @@ public class Processor extends Thread{
 
     @Override
     public void run(){
-        if (queue == null){
-            break;
-        } else{
-            //
+        int count = 0;
+        while (count < queue.getQueueSize()){
+            if (queue==null){
+                break;
+            } else {
+                Item item = queue.retrieveItem();
+                queue.incrementBalance(item.getCost());
+                numberOfOrders++;
+                revenue += item.getCost();
+            }
         }
-        queue.incrementBalance(item.getCost);
+        System.out.println("OrderProcessor " + id + " processed a total of " + numberOfOrders + " orders for a total of $" + revenue + ".");
     }
 }

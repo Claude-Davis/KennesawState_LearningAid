@@ -30,22 +30,30 @@ public class Driver {
         //Purchaser objects
             System.out.print("Purchase how many 't-shirt' at $6.50? ");
                 int quantity = scan.nextInt();
+                    int itemsToProcess = quantity;
                 Purchaser p1 = new Purchaser(inventory, tShirt, quantity);
             System.out.print("Purchase how many 'sweater' at $8.50? ");
                 quantity = scan.nextInt();
+                    itemsToProcess += quantity;
                 Purchaser p2 = new Purchaser(inventory, tShirt, quantity);
             System.out.print("Purchase how many 'sweatpants' at $10.00? ");
                 quantity = scan.nextInt();
+                    itemsToProcess += quantity;
                 Purchaser p3 = new Purchaser(inventory, tShirt, quantity);
             System.out.print("Purchase how many 'skirt' at $25.50? ");
                 quantity = scan.nextInt();
+                    itemsToProcess += quantity;
                 Purchaser p4 = new Purchaser(inventory, tShirt, quantity);
             System.out.print("Purchase how many 'dress' at $15.50? ");
                 quantity = scan.nextInt();
+                    itemsToProcess += quantity;
                 Purchaser p5 = new Purchaser(inventory, tShirt, quantity);
-            System.out.println("Purchaser created. Press 'enter' to start purchases ...");
 
-        scan.nextLine();
+
+            System.out.println("Purchasera created. Press 'enter' to start purchases ...");
+            System.out.println(" ");
+
+        String enter = scan.nextLine();
 
         //start threads of all purchaser objects
             System.out.println("Purchasers have started working...");
@@ -54,7 +62,7 @@ public class Driver {
         p3.start();
         p4.start();
         p5.start();
-            System.out.println("Purchasers are done working. A total of " + pending + " items are awaiting processing.");
+            System.out.println("Purchasers are done working. A total of " + itemsToProcess + " items are awaiting processing.");
 
         
             System.out.println(" ");
@@ -65,7 +73,7 @@ public class Driver {
             int quantityOfProcessors = scan.nextInt();
         System.out.println("OrderProcessors created. Press 'enter' to start processing orders...");
         
-        scan.nextLine();
+        enter = scan.nextLine();
         
             //create Processor objects
             int count = 0;
