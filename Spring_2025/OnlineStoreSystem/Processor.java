@@ -21,14 +21,14 @@ public class Processor extends Thread{
             Item i = queue.retrieveItem();
             
             // If queue is empty, terminate loop
-            if (i == null) {
+            if (i==null) {
                 break;
             }
 
             // Process item
-            queue.incrementBalance(i.getCost()); 
+            queue.incrementBalance(i.cost); 
             numberOfOrders++;   
-            revenue += i.getCost();   
+            revenue += i.cost;   
         }
 
         System.out.println("OrderProcessor " + id + " processed a total of " + numberOfOrders + " orders for a total of $" + revenue + ".");
