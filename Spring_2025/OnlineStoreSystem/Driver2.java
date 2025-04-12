@@ -43,7 +43,7 @@ public class Driver2 {
             System.out.println("Purchasers created. Press 'enter' to start purchases ...");
             System.out.println(" ");
 
-        //scan.nextLine();
+        scan.nextLine();
         String enter = scan.nextLine();
 
         //start threads of all purchaser objects
@@ -62,7 +62,7 @@ public class Driver2 {
                 p4.join();
                 p5.join();
 
-                System.out.println("Purchasers are done working. A total of " + itemsToProcess + " items are awaiting processing.");
+                System.out.println("Purchasers are done working. A total of " + inventory.getQueueSize() + " items are awaiting processing.");
             } catch (InterruptedException e){
                 System.out.println("Purchaser thread interrupted: " + e.getMessage());
             }
@@ -76,14 +76,19 @@ public class Driver2 {
             int purchaserQuantityOfProcessors = scan.nextInt();
 
             //create Processor objects
-            for (int p=0; p<purchaserQuantityOfProcessors; p++){
+            /*for (int p=0; p<purchaserQuantityOfProcessors; p++){
                 Processor newProcessor = new Processor(inventory);
                 allProcessors.add(newProcessor);
+            }*/
+            Processor[] processors = new Processor[purchaserQuantityOfProcessors];
+            for (int i = 0; i < purchaserQuantityOfProcessors; i++) {
+                processors[i] = new Processor(inventory);
             }
+
+            scan.nextLine();
 
             System.out.println("OrderProcessors created. Press 'enter' to start processing orders...");
 
-            scan.nextLine();
             enter = scan.nextLine();
 
             System.out.println("Processors are now working...");
@@ -94,9 +99,9 @@ public class Driver2 {
             }
 
             // Wait for Processor threads stop/finish
-            for (Processor processor : allProcessors) {
+            for (Processor p : allProcessors) {
                 try {
-                    processor.join();
+                    p.join();
                 } catch (InterruptedException e) {
                     System.out.println("Processor thread interrupted: " + e.getMessage());
                 }
