@@ -5,11 +5,16 @@ public class Inventory {
     private int itemsProcessed=0;
     private LinkedList<Item> processingQueue;
 
-    public void addItem(Item x){
-        processingQueue.add(x);
+    //constructor
+    public Inventory(){
+        this.processingQueue = new LinkedList<>();
     }
 
-    public Item retrieveItem(){
+    public void addItem(Item x){
+        this.processingQueue.add(x);
+    }
+
+    public synchronized Item retrieveItem(){
         itemsProcessed++;
         Item head = processingQueue.get(0);
         processingQueue.remove(head);
