@@ -1,16 +1,16 @@
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Inventory {
     private double balance=0;
     private int itemsProcessed=0;
-    private LinkedList<Item> processingQueue;
+    private final List<Item> processingQueue = Collections.synchronizedList(new LinkedList<>());
+        /* Collections.synchronizedList() wraps the LinkedList so the operations are synchronized;
+            allows multiple thread to interact wit hthe list while preventing race conditions
+        */
 
-    //constructor
-    public Inventory(){
-        this.processingQueue = new LinkedList<>();
-    }
-
-    public void addItem(Item x){
+    public synchronized void addItem(Item x){
         this.processingQueue.add(x);
     }
 
@@ -21,19 +21,19 @@ public class Inventory {
         return head;
     }
 
-    public void incrementBalance(double x){
+    public synchronized void incrementBalance(double x){
         balance += x;
     }
 
-    public double retrieveBalance(){
+    public synchronized double retrieveBalance(){
         return balance;
     }
 
-    public int getQueueSize(){
+    public synchronized int getQueueSize(){
         return processingQueue.size();
     }
 
-    public int getItemsProcessed(){
+    public synchronized int getItemsProcessed(){
         return itemsProcessed;
     }
 }
