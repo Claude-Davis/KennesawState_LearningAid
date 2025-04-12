@@ -18,7 +18,7 @@ public class Driver2 {
         System.out.println("[Order Queue Simulator]");
 
         //Purchaser objects
-            System.out.print("Purchase how many 't-shirt' at $6.50? ");
+            /* System.out.print("Purchase how many 't-shirt' at $6.50? ");
                 int purchaserQuantity = scan.nextInt();
                     int itemsToProcess = purchaserQuantity;
                 Purchaser p1 = new Purchaser(inventory, tShirt, purchaserQuantity);
@@ -38,6 +38,15 @@ public class Driver2 {
                 purchaserQuantity = scan.nextInt();
                     itemsToProcess += purchaserQuantity;
                 Purchaser p5 = new Purchaser(inventory, dress, purchaserQuantity);
+                */
+            Item[] items = {tShirt, sweater, sweatpants, skirt, dress};  //array of type Item created to store all created objects of Item
+            Purchaser[] purchasers = new Purchaser[5];  //array of type Purchaser created to store all created objects of Purchaser
+
+            for (int i=0; i<items.length; i++){
+                System.out.print("Purchase how many '" + items[i].description + "' at $" + items[i].cost + "? ");
+                int purchaserQuantity = scan.nextInt();
+                purchasers[i] = new Purchaser(inventory, items[i], purchaserQuantity);  //Purchaser objects created
+            }
 
 
             System.out.println("Purchasers created. Press 'enter' to start purchases ...");
@@ -48,19 +57,15 @@ public class Driver2 {
 
         //start threads of all purchaser objects
             System.out.println("Purchasers have started working...");
-        p1.start();
-        p2.start();
-        p3.start();
-        p4.start();
-        p5.start();
+        for (Purchaser p : purchasers) {
+            p.start();
+        }
 
         //wait for Purchaser threads to stop
             try {
-                p1.join();
-                p2.join();
-                p3.join();
-                p4.join();
-                p5.join();
+                for (Purchaser p : purchasers) {
+                    p.join();
+                }
 
                 System.out.println("Purchasers are done working. A total of " + inventory.getQueueSize() + " items are awaiting processing.");
             } catch (InterruptedException e){
