@@ -1,99 +1,123 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
-public class Driver {
+public class Driver2 {
     public static void main(String[] args){
         Scanner scan = new Scanner (System.in);
         Inventory inventory = new Inventory();
-        ArrayList<Processor> allProcessors = new ArrayList<Processor>(); 
 
         //objects of Item
-                String desc = "T-shirt";
-                double cost = 6.50;
-            Item tShirt = new Item(desc, cost);
-                desc = "Sweater";
-                cost = 8.50;
-            Item sweater = new Item(desc, cost);
-                desc = "Sweatpants";
-                cost = 10.00;
-            Item sweatpants = new Item(desc, cost);
-                desc = "Skirt";
-                cost = 25.50;
-            Item skirt = new Item(desc, cost);
-                desc = "Dress";
-                cost = 15.50;
-            Item dress = new Item(desc, cost);
+            Item tShirt = new Item("T-shirt", 6.5);
+            Item sweater = new Item("Sweater", 8.5);
+            Item sweatpants = new Item("Sweatpants", 10.0);
+            Item skirt = new Item("Skirt", 25.5);
+            Item dress = new Item("Dress", 15.5);
 
         //title
         System.out.println("[Order Queue Simulator]");
 
         //Purchaser objects
-            System.out.print("Purchase how many 't-shirt' at $6.50? ");
-                int quantity = scan.nextInt();
-                    int itemsToProcess = quantity;
-                Purchaser p1 = new Purchaser(inventory, tShirt, quantity);
+            /* System.out.print("Purchase how many 't-shirt' at $6.50? ");
+                int purchaserQuantity = scan.nextInt();
+                    int itemsToProcess = purchaserQuantity;
+                Purchaser p1 = new Purchaser(inventory, tShirt, purchaserQuantity);
             System.out.print("Purchase how many 'sweater' at $8.50? ");
-                quantity = scan.nextInt();
-                    itemsToProcess += quantity;
-                Purchaser p2 = new Purchaser(inventory, tShirt, quantity);
+                purchaserQuantity = scan.nextInt();
+                    itemsToProcess += purchaserQuantity;
+                Purchaser p2 = new Purchaser(inventory, sweater, purchaserQuantity);
             System.out.print("Purchase how many 'sweatpants' at $10.00? ");
-                quantity = scan.nextInt();
-                    itemsToProcess += quantity;
-                Purchaser p3 = new Purchaser(inventory, tShirt, quantity);
+                purchaserQuantity = scan.nextInt();
+                    itemsToProcess += purchaserQuantity;
+                Purchaser p3 = new Purchaser(inventory, sweatpants, purchaserQuantity);
             System.out.print("Purchase how many 'skirt' at $25.50? ");
-                quantity = scan.nextInt();
-                    itemsToProcess += quantity;
-                Purchaser p4 = new Purchaser(inventory, tShirt, quantity);
+                purchaserQuantity = scan.nextInt();
+                    itemsToProcess += purchaserQuantity;
+                Purchaser p4 = new Purchaser(inventory, skirt, purchaserQuantity);
             System.out.print("Purchase how many 'dress' at $15.50? ");
-                quantity = scan.nextInt();
-                    itemsToProcess += quantity;
-                Purchaser p5 = new Purchaser(inventory, tShirt, quantity);
+                purchaserQuantity = scan.nextInt();
+                    itemsToProcess += purchaserQuantity;
+                Purchaser p5 = new Purchaser(inventory, dress, purchaserQuantity);
+                */
+            Item[] items = {tShirt, sweater, sweatpants, skirt, dress};  //array of type Item created to store all created objects of Item
+            Purchaser[] purchasers = new Purchaser[5];  //array of type Purchaser created to store all created objects of Purchaser
+
+            for (int i=0; i<items.length; i++){
+                System.out.print("Purchase how many '" + items[i].description + "' at $" + items[i].cost + "? ");
+                int purchaserQuantity = scan.nextInt();
+                purchasers[i] = new Purchaser(inventory, items[i], purchaserQuantity);  //Purchaser objects created
+            }
 
 
-            System.out.println("Purchasera created. Press 'enter' to start purchases ...");
+            System.out.println("Purchasers created. Press 'enter' to start purchases ...");
             System.out.println(" ");
 
+        scan.nextLine();
         String enter = scan.nextLine();
 
         //start threads of all purchaser objects
             System.out.println("Purchasers have started working...");
-        p1.start();
-        p2.start();
-        p3.start();
-        p4.start();
-        p5.start();
-            System.out.println("Purchasers are done working. A total of " + itemsToProcess + " items are awaiting processing.");
+        for (Purchaser p : purchasers) {
+            p.start();
+        }
 
-        
+        //wait for Purchaser threads to stop
+            int processedQuantity=0;
+            try {
+                for (Purchaser p : purchasers) {
+                    p.join();
+                }
+
+                System.out.println("Purchasers are done working. A total of " + inventory.getQueueSize() + " items are awaiting processing.");
+                processedQuantity = inventory.getQueueSize();
+            } catch (InterruptedException e){
+                System.out.println("Purchaser thread interrupted: " + e.getMessage());
+            }
+
+            
             System.out.println(" ");
 
         
         //Processors
         System.out.print("Create how many processors? ");
-            int quantityOfProcessors = scan.nextInt();
-        System.out.println("OrderProcessors created. Press 'enter' to start processing orders...");
-        
-        enter = scan.nextLine();
-        
+            int purchaserQuantityOfProcessors = scan.nextInt();
+
             //create Processor objects
-            int count = 0;
-            while (count < quantityOfProcessors){
-                Processor newProcessor = new Processor(inventory);
-                allProcessors.add(newProcessor);
-                count++;
+                /* for (int p=0; p<purchaserQuantityOfProcessors; p++){
+                    Processor newProcessor = new Processor(inventory);
+                    allProcessors.add(newProcessor);
+                } */
+            Processor[] processors = new Processor[purchaserQuantityOfProcessors];
+            for (int i = 0; i < purchaserQuantityOfProcessors; i++) {
+                processors[i] = new Processor(inventory);
             }
 
-            //start Processor objects
-            for (Processor p : allProcessors){
+            scan.nextLine();
+
+            System.out.println("OrderProcessors created. Press 'enter' to start processing orders...");
+
+            enter = scan.nextLine();
+
+            System.out.println("Processors are now working...");
+
+            //start Processor objects' threads
+            for (Processor p : processors){
                 p.start();
             }
 
-            System.out.println("All OrderProcessors are done processing order.");
+            // Wait for Processor threads stop/finish
+            for (Processor p : processors) {
+                try {
+                    p.join();
+                } catch (InterruptedException e) {
+                    System.out.println("Processor thread interrupted: " + e.getMessage());
+                }
+            }
+        
+            System.out.println("All OrderProcessors are done processing orders.");
             System.out.println(" ");
 
         
         //print inventory's balance and itemsProcessed
-        System.out.println(inventory.getItemsProcessed() + " items were processed for a total of $" + inventory.retrieveBalance());
+        System.out.println(processedQuantity + " items were processed for a total of $" + inventory.retrieveBalance() + ".");
 
 
         System.out.println("Simulation complete.");
