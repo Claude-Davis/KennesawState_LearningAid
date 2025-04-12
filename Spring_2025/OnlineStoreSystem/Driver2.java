@@ -60,12 +60,14 @@ public class Driver2 {
         }
 
         //wait for Purchaser threads to stop
+            int processedQuantity=0;
             try {
                 for (Purchaser p : purchasers) {
                     p.join();
                 }
 
                 System.out.println("Purchasers are done working. A total of " + inventory.getQueueSize() + " items are awaiting processing.");
+                processedQuantity = inventory.getQueueSize();
             } catch (InterruptedException e){
                 System.out.println("Purchaser thread interrupted: " + e.getMessage());
             }
@@ -79,10 +81,10 @@ public class Driver2 {
             int purchaserQuantityOfProcessors = scan.nextInt();
 
             //create Processor objects
-            /*for (int p=0; p<purchaserQuantityOfProcessors; p++){
-                Processor newProcessor = new Processor(inventory);
-                allProcessors.add(newProcessor);
-            }*/
+                /* for (int p=0; p<purchaserQuantityOfProcessors; p++){
+                    Processor newProcessor = new Processor(inventory);
+                    allProcessors.add(newProcessor);
+                } */
             Processor[] processors = new Processor[purchaserQuantityOfProcessors];
             for (int i = 0; i < purchaserQuantityOfProcessors; i++) {
                 processors[i] = new Processor(inventory);
@@ -115,7 +117,7 @@ public class Driver2 {
 
         
         //print inventory's balance and itemsProcessed
-        System.out.println(inventory.getItemsProcessed() + " items were processed for a total of $" + inventory.retrieveBalance());
+        System.out.println(processedQuantity + " items were processed for a total of $" + inventory.retrieveBalance() + ".");
 
 
         System.out.println("Simulation complete.");
