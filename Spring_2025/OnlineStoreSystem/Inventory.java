@@ -15,10 +15,11 @@ public class Inventory {
     }
 
     public synchronized Item retrieveItem(){
+        if (processingQueue.size()==0){
+            return null;
+        }
         itemsProcessed++;
-        Item head = processingQueue.get(0);
-        processingQueue.remove(head);
-        return head;
+        return processingQueue.remove(0);
     }
 
     public synchronized void incrementBalance(double x){
