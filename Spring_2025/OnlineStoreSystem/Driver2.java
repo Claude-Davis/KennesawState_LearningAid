@@ -1,11 +1,9 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Driver2 {
     public static void main(String[] args){
         Scanner scan = new Scanner (System.in);
         Inventory inventory = new Inventory();
-        ArrayList<Processor> allProcessors = new ArrayList<Processor>(); 
 
         //objects of Item
             Item tShirt = new Item("T-shirt", 6.5);
@@ -99,12 +97,12 @@ public class Driver2 {
             System.out.println("Processors are now working...");
 
             //start Processor objects' threads
-            for (Processor p : allProcessors){
+            for (Processor p : processors){
                 p.start();
             }
 
             // Wait for Processor threads stop/finish
-            for (Processor p : allProcessors) {
+            for (Processor p : processors) {
                 try {
                     p.join();
                 } catch (InterruptedException e) {
