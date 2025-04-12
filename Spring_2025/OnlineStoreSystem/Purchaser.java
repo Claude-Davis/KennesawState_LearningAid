@@ -6,13 +6,13 @@ public class Purchaser extends Thread {
     private Inventory queue;
     private Item item;
 
-    public Purchaser(Inventory queue, Item item, int x){
+    public Purchaser(Inventory queue, Item item, int itemsToProcess){
         this.id = nextId;
         this.queue = queue;
         this.item = item;
             nextId++;
         this.itemsProcessed = 0;
-        this.itemsToProcess = x;
+        this.itemsToProcess = itemsToProcess;
     }
 
     @Override

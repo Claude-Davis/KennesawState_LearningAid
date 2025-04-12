@@ -7,7 +7,7 @@ public class Processor extends Thread{
 
     public Processor(Inventory queue){
         this.numberOfOrders = 0;
-        this.revenue = 0.0;
+        this.revenue = 0;
         this.id = nextId;
             nextId++;
         this.queue = queue;
@@ -15,6 +15,7 @@ public class Processor extends Thread{
 
     @Override
     public void run(){
+        System.out.println("OrderProcessor " + id + " starting order processing...");
         while (true) {
             // Retrieve item from queue
             Item i = queue.retrieveItem();
@@ -29,7 +30,7 @@ public class Processor extends Thread{
             numberOfOrders++;   
             revenue += i.getCost();   
         }
-        
+
         System.out.println("OrderProcessor " + id + " processed a total of " + numberOfOrders + " orders for a total of $" + revenue + ".");
     }
 }
