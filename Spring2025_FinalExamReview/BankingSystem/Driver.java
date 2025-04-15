@@ -85,6 +85,7 @@ class Driver {
                     break;
                 case 7:
                     System.out.println(savings.addInterest());
+                    System.out.println("Current Balance of Savings: $" + savings.getAccountBalance());
 
                     System.out.println(" ");
                     break;
