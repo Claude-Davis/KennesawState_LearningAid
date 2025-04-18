@@ -1,3 +1,5 @@
+package Difference_Detector;
+
 import java.io.*;
 import java.util.Scanner;
 
