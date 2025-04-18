@@ -1,60 +1,53 @@
-
+import java.io.*;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 public class Driver {
-    public static void main(String[] args){
-        //
-    }
-
-
-    public static String diff(File x, File y) throws FileNotFoundException{
-        Scanner readX = null;
-        Scanner readY = null;
-
-        StringBuilder difference1 = new StringBuilder();
-        StringBuilder difference2 = new StringBuilder();
-
-        String output;
-
+    public static String diff(File file1, File file2) throws FileNotFoundException{
         try {
-            readX = new Scanner(x);
-            readY = new Scanner (y);
+            Scanner forTest1 = new Scanner(file1);
+            Scanner forTest2 = new Scanner(file2);
 
-            int lineTracker = 1;
+            String line1 = "";
+            String line2 = "";
 
-            while (readX.hasNextLine() || readY.hasNextLine()) {
-                String lineX = readX.hasNextLine() ? readX.nextLine() : "";
-                    /* returns true or false:
-                        "true" of the file has another line
-                        "false" results in an empty String being created and given to the Scanner object (readX)
-                    */
-                String lineY = readY.hasNextLine() ? readY.nextLine() : "";
+            int lineNum = 0;
 
+            while ((forTest1.hasNextLine()) || (forTest2.hasNextLine())) {
+                line1 = forTest1.nextLine();
+                line2 = forTest2.nextLine();
 
-                if (!readX.equals(readY)){
-                    difference1.append("Line "+ lineTracker + ": \n");
-                    difference1.append("< " + lineX + "\n");
-                    difference1.append("> " + lineY + "\n");
-                } else if ( (readX.hasNextLine() && !readY.hasNextLine()) || (readY.hasNextLine() && !readX.hasNextLine()) ) {
-                    difference1.append("Line "+ lineTracker + ": \n");
-                    difference1.append("< " + lineX + "\n");
-                    difference1.append("> " + lineY + "\n");
-                } else {
-                    output = difference1.toString();
+                lineNum++;
+
+                //line differences
+                if (!line1.equals(line2)){
+                    System.out.println("Line " + lineNum +": \n< " + line1 + "\n> " + line2);
                 }
-                
-                
+
+                //number of line differences
+                if ((forTest1.hasNextLine() && !forTest2.hasNextLine()) || (forTest2.hasNextLine() && !forTest1.hasNextLine())) {
+                    System.out.println("Files have different number of lines.");
+                }
             }
 
-            
-
+            //line identical
+            if (line1 == line2) {
+                System.out.println("Files are identical.");
+            }
         } catch (FileNotFoundException e) {
-            System.out.println(e + "(The system cannot find the file specified.)");
+            System.out.println("Error: " + e.getMessage());
         }
-        
-        return output;
+    }
+
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("[Diff Detector]");
+        int opt = 0;
+
+        while (opt!=8){
+            //menu
+            switch (opt){
+                //
+            }
         }
     }
 }
