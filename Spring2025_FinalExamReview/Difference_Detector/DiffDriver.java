@@ -1,10 +1,11 @@
-package Difference_Detector;
+//package Difference_Detector;
 
 import java.io.*;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class DiffDriver {
-    public static String diff(File file1, File file2) throws FileNotFoundException{
+    public static String diff(File file1, File file2) throws FileNotFoundException, NoSuchElementException{
         String line1 = "";
         String line2 = "";
 
@@ -24,24 +25,21 @@ public class DiffDriver {
 
                 //line differences
                 if (!line1.equals(line2)){
-                    printThis = "Line " + lineNum +": \n< " + line1 + "\n> " + line2;
-                }
-
-                //number of line differences
-                if ((forTest1.hasNextLine() && !forTest2.hasNextLine()) || (forTest2.hasNextLine() && !forTest1.hasNextLine())) {
-                    printThis = "Files have different number of lines.";
+                    printThis += "\nLine " + lineNum +": \n< " + line1 + "\n> " + line2;
                 }
             }
 
             //line identical
-            if (line1 == line2) {
-                printThis = "Files are identical.";
+            if (line1.equals(line2)) {   //can't use line1==line2 bcs it compares the objects not the content
+                printThis = "\nFiles are identical.";
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
+        } catch (NoSuchElementException e) {
+            printThis = "\nFiles have different number of lines.";
         }
 
-        //printThis = printThis;
+        
         return printThis;
     }
 
