@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 public class Main {
     public static void main (String[] args) throws FileNotFoundException, NoSuchElementException{
         System.out.println(studentGrades());
+
+        System.out.println("Average of Grades: " );
     }
 
     public static String studentGrades() throws FileNotFoundException, NoSuchElementException{
@@ -14,6 +16,8 @@ public class Main {
         String grade = "";
 
         StringBuilder lines = new StringBuilder();
+
+        int sumOfGrades = 0;
 
         try{
             File students = new File("StudentRoster.txt");
@@ -25,6 +29,8 @@ public class Main {
             while (readStudents.hasNextLine()) {
                 studentsName = readStudents.nextLine();
                 grade = readGrades.nextLine();
+
+                sumOfGrades += Integer.parseInt(grade);
 
                 lines.append("\n" + studentsName +": " + grade);
             }
