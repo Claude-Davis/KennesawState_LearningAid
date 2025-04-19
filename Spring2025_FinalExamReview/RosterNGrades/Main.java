@@ -8,18 +8,20 @@ public class Main {
     }
 
     public static String studentGrades() throws FileNotFoundException, NoSuchElementException{
-        File students = new File("StudentRoster.txt");
-        File grades = new File("Grades.txt");
-
-        Scanner readStudents = new Scanner(students);
-        Scanner readGrades = new Scanner(grades);
         
-        String studentsName;
-        String grade;
+        
+        String studentsName = "";
+        String grade = "";
 
-        StringBuilder lines = null;
+        StringBuilder lines = new StringBuilder();
 
         try{
+            File students = new File("StudentRoster.txt");
+            File grades = new File("Grades.txt");
+
+            Scanner readStudents = new Scanner(students);
+            Scanner readGrades = new Scanner(grades);
+
             while (readStudents.hasNextLine()) {
                 studentsName = readStudents.nextLine();
                 grade = readGrades.nextLine();
