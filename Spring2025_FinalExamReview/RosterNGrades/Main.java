@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println(printNamesGrades());
 
+        System.out.println(" ");
         System.out.println("Average of Grades: " + df.format(studentGradeAvg()));
     }
 
