@@ -1,19 +1,28 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.text.DecimalFormat;
 
 public class Main {
     public static void main (String[] args) throws FileNotFoundException, NoSuchElementException{
-        System.out.println(studentGrades());
+        DecimalFormat df = new DecimalFormat(".00");
 
-        System.out.println("Average of Grades: " );
+        System.out.println(" ");
+        System.out.println("[Spring Class of 2025]");
+        
+        System.out.println(printNamesGrades());
+
+        System.out.println("Average of Grades: " + df.format(studentGradeAvg()));
     }
 
-    public static String studentGrades() throws FileNotFoundException, NoSuchElementException{
-        
-        
+    public static String printNamesGrades() throws FileNotFoundException, NoSuchElementException{
         String studentsName = "";
         String grade = "";
+
+        ArrayList<String> allStudents = new ArrayList<String>();
+        ArrayList<String> allGrades = new ArrayList<String>();
 
         StringBuilder lines = new StringBuilder();
 
@@ -30,9 +39,15 @@ public class Main {
                 studentsName = readStudents.nextLine();
                 grade = readGrades.nextLine();
 
-                sumOfGrades += Integer.parseInt(grade);
+                if (!(studentsName.trim()).equals("") && !(grade.trim()).equals("")){
+                    allStudents.add(studentsName);
+                    allGrades.add(grade);
 
-                lines.append("\n" + studentsName +": " + grade);
+                    for (int x=0; x<allStudents.size(); x++){
+                        lines.append("\n" + allStudents.get(x) +": " + allGrades.get(x));
+                    }
+                }
+
             }
             return lines.toString();
         } catch (FileNotFoundException e){
@@ -41,5 +56,44 @@ public class Main {
             System.out.println("ERROR: " + e.getMessage());
         }
         return lines.toString();
+    }
+
+    public static double studentGradeAvg() throws FileNotFoundException, NoSuchElementException{
+        String gradeString = "";
+
+        ArrayList<Integer> allGrades = new ArrayList<Integer>();
+
+        double sumOfGrades = 0;
+
+        double average = 0;
+
+        try{
+            File grades = new File("Grades.txt");
+
+            Scanner readGrades = new Scanner(grades);
+
+            while (readGrades.hasNextLine()) {
+                gradeString = readGrades.nextLine();
+
+                if (!(gradeString.trim()).equals("")){
+                    int grade = Integer.parseInt(gradeString);
+                    allGrades.add(grade);
+                }
+
+            }
+
+            //grade avg calculations
+            for (int g=0; g<allGrades.size(); g++){
+                sumOfGrades += allGrades.get(g);
+            }
+            average = sumOfGrades / allGrades.size();
+
+        } catch (FileNotFoundException e){
+            System.out.println("ERROR: " + e.getMessage());
+        } catch (NoSuchElementException e){
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+        return average;
     }
 }
