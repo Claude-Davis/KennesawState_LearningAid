@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println(" ");
         System.out.println("[Spring Class of 2025]");
-        
+
         System.out.println(printNamesGrades());
 
         System.out.println("Average of Grades: " + df.format(studentGradeAvg()));
@@ -21,12 +21,7 @@ public class Main {
         String studentsName = "";
         String grade = "";
 
-        ArrayList<String> allStudents = new ArrayList<String>();
-        ArrayList<String> allGrades = new ArrayList<String>();
-
         StringBuilder lines = new StringBuilder();
-
-        int sumOfGrades = 0;
 
         try{
             File students = new File("StudentRoster.txt");
@@ -39,13 +34,8 @@ public class Main {
                 studentsName = readStudents.nextLine();
                 grade = readGrades.nextLine();
 
-                if (!(studentsName.trim()).equals("") && !(grade.trim()).equals("")){
-                    allStudents.add(studentsName);
-                    allGrades.add(grade);
-
-                    for (int x=0; x<allStudents.size(); x++){
-                        lines.append("\n" + allStudents.get(x) +": " + allGrades.get(x));
-                    }
+                if (!(studentsName.trim()).equals("") && !(grade.trim()).equals("")) {
+                    lines.append("\n" + studentsName +": " + grade);
                 }
 
             }
