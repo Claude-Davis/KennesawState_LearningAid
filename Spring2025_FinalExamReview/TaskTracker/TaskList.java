@@ -1,4 +1,4 @@
-package TaskTracker;
+//package TaskTracker;
 
 public class TaskList {
     private Node head;
@@ -36,6 +36,19 @@ public class TaskList {
         Node current = head;
         while (current!=null) {
             System.out.println(current.toString());
+            current = current.next;
         }
+    }
+
+    public boolean isEmpty() {
+        /*
+        if (head==null) {
+            return true;
+        } else if (head!=null) {
+            return false;
+        }
+        return empty;
+        */
+        return head == null;
     }
 }
