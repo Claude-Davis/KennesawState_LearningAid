@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class BlueRayCollection {
     private BlueRayDisk head;
+    private LinkedList<BlueRayDisk> list;
 
     public BlueRayCollection(){
         this.head = null;
@@ -11,15 +12,25 @@ public class BlueRayCollection {
 
     public void addDisk(String title, String director, int yearOfRelease, double cost){
         BlueRayDisk disk = new BlueRayDisk(title, director, yearOfRelease, cost);
-        LinkedList<BlueRayDisk> list = new LinkedList<BlueRayDisk>();
+        list = new LinkedList<BlueRayDisk>();
 
         if (head.equals(null)) {
             head = disk;
         }
+
         list.add(disk);
+
+        System.out.println("BlueRay Disk added to Collection.");
     }
 
-    public String toString(){
-        return ;
+    public String showAll(){
+        StringBuilder print = new StringBuilder();
+        for (BlueRayDisk d : list) {
+            while (!d.equals(null)){
+                print.append(d + "\n");
+            }
+        }
+
+        return print.toString();
     }
 }
