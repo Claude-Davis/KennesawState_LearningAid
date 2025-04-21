@@ -31,4 +31,11 @@ public class TaskList {
         head = head.next;
         return removedTask;
     }
+
+    public void printTask() {
+        Node current = head;
+        while (current!=null) {
+            System.out.println(current.toString());
+        }
+    }
 }

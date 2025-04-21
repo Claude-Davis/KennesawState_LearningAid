@@ -19,7 +19,7 @@ REQUIRED CLASSES:
          - Node next;
     * methods:
          - void addTask(Task t) : add task to end of the list
-         - Task removeTask() : remove first task amd return item
+         - Task removeTask() : remove first task and return item
          - void printTasks()
          - boolean isEmpty
 
