@@ -1,0 +1,26 @@
+** 05/29 Note: turn this into an html file
+
+Barry Hyman’s Problem Formulation Model:
+
+1. Need Statement: recognizes and describes the need for a solution or improvement
+    to an “unsatisfactory situation.”  It answers the questions, “what is wrong with
+    the way things are currently? What is unsatisfactory about it? What negative effects
+    does this situation cause?” You may need to do research and supply data to quantify
+    the negative effects.
+
+2. Goal Statement:  describes what the improved situation would look like once a solution
+    has been implemented. The goal statement defines the scope of your search for a solution.
+    At this point, do not describe your solution, only the goal that any proposed solution should
+    achieve. The broader you make your goal, the more numerous and varied your solutions can be; a
+    narrowly focused goal limits the number and variety of possible solutions.
+
+3. Objectives: define measurable, specific outcomes that any feasible solution should optimize (aspects
+    you can use to “grade” the effectiveness of the solution). Objectives provide you with ways to
+    quantifiably measure how well any solution will solve the problem; ideally, they will allow you to
+    compare multiple solutions and figure out which one is most effective (which one gets the highest score
+    on meeting the objectives?).
+
+4. Constraints: define the limits that any feasible solution must adhere to in order to be acceptable (pass/fail
+    conditions, range limits, etc.). The key word here is must — constraints are the “go/no go” conditions that
+    determine whether a solution is acceptable or not.  These often include budget and time limits, as well as legal,
+    safety and other regulatory requirements.
