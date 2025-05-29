@@ -9,9 +9,11 @@
 - Vinesh Babu Yaganti (lab - Fall 2024)
 - Eun Sik Kim (lecture - Spring 2025)
 - Tarun Teja Pokala (lab - Spring 2025)
+- William Forsyth (lecture/lab - Summer 2025)
 
 🍁 Fall 2024 : Python
-🍀 Spring 2025 : Java, C# [, Kotlin (primarily self-guided)]
+🍀 Spring 2025 : Java, C#
+☀️ Summer 2025 : 
 
 ---
 
@@ -25,9 +27,11 @@
 - Vinesh Babu Yaganti (lab - Otoño 2024)
 - Eun Sik Kim (lectura - Primavera 2025)
 - Tarun Teja Pokala (lab - Primavera 2025)
+- William Forsyth (lectura/lab - Verano 2025)
 
 🍁 Otoño 2024 : Python
 🍀 Primavera 2025 : Java, C#
+☀️ Verano 2025 : 
 
 ---
 
