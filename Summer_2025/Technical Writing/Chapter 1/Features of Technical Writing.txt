@@ -11,4 +11,4 @@
 Main Purposes of Technical Writing:
     * present technical/specialized info in a clear and usable way. 
     * provide clear instructions on a process or usage of a tool.
-    * provide info that advances the goal(s) of the company or org.
+    * provide info that advances the goal(s) of the company or organization.

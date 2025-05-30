@@ -13,7 +13,7 @@ Barry Hyman’s Problem Formulation Model:
     At this point, do not describe your solution, only the goal that any proposed solution should
     achieve. The broader you make your goal, the more numerous and varied your solutions can be; a
     narrowly focused goal limits the number and variety of possible solutions.
-        * 
+        
 3. Objectives: define measurable, specific outcomes that any feasible solution should optimize (aspects
     you can use to “grade” the effectiveness of the solution). Objectives provide you with ways to
     quantifiably measure how well any solution will solve the problem; ideally, they will allow you to
@@ -27,6 +27,7 @@ Barry Hyman’s Problem Formulation Model:
 
 
 --- --- --- --- ---
+
 
 Applied to Communication Tasks
 
@@ -48,3 +49,12 @@ Applied to Communication Tasks
         ex.2. What format and style do they require? Is there a Style Guide you must follow? A template you can use?
         ex.3. How much time do you have to create it?  Do you have a deadline? (due date)
         ex.4. Are there requirements for using sources? (academic integrity rules)
+
+
+--- --- --- --- ---
+
+
+Other Notes
+    * Consider what your audience's purpose may be for reading your document.
+        - How can you help them achieve their goal?
+    * Remember your document may be filed away and read again years later. Consider the needs/purposes of future audiences, as well.
