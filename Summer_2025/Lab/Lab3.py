@@ -1,8 +1,8 @@
 # Lab3.py
 # IT1114/Section W01
 # Starlan Davis
-# Lab #1
-# Due: 9 June 2025
+# Lab #3
+# Due: 10 June 2025
 # Purpose: This program calculates the sales of multiple salesmen over four weeks and displays the total in addition to the manager's bonus
 # Resources: cse 1321
 
@@ -14,6 +14,7 @@ sg = salesGoal
 personNum  = 1
 allPersons = 0
 next = ""
+mngBonus = 0
 total = 0
 
 while (next.lower() != "no") and (next.lower() != "n"):
@@ -24,6 +25,8 @@ while (next.lower() != "no") and (next.lower() != "n"):
     week4 = int(input("Salesperson " + str(personNum) + " week 4: "))
 
     total += (week1+week2+week3+week4)
+
+    mngBonus += (week1*0.02)+(week2*0.02)+(week3*0.02)+(week4*0.02)
 
     # increase person's number
     allPersons = personNum
@@ -40,3 +43,12 @@ if (next.lower() == "no") or (next.lower() == "n"):
     print("Number of Employees: " + str(allPersons))
     print("Dept. of Sales Goal: $" + str(sg))
     print("Total Sales: $" + str(total))
+
+
+# manager bonus
+if (total <= sg):
+    bonus = mngBonus
+elif (total > sg):
+    bonus = total * 0.05
+
+print("Mgr. Bonus: $" + str(bonus))
