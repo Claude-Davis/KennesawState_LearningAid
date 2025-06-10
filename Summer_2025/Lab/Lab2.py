@@ -21,7 +21,7 @@ print (" ")
 totalPizzaSlices = pizzaOrders * 3
 wholePizzas = math.ceil((totalPizzaSlices)/12)
 totalSalads = saladOrders
-print("You ordered " + str(wholePizzas) + " pizzas and " + str(totalSalads) + " salads. \n")
+print("Pizzas Ordered: " + str(wholePizzas) + "\n" )
 
 
 # delivery charge calculations
@@ -36,9 +36,9 @@ else:
 
 
 # pricing before discounts & delivery charge
-print("Total cost of pizzas is $" + str(pizzaCost) + ".")
-print("Total cost of salads is $" + str(saladCost) + ".")
-print("Total Cost (pre Discounts & Delivery Fee): $" + str(pizzaCost+saladCost) + ".\n")
+print("Pizza Cost: $" + str(pizzaCost) + ".")
+print("Salad Cost: $" + str(saladCost) + ".")
+print("Total: $" + str(pizzaCost+saladCost) + ".\n")
 
 
 # discount calculations
@@ -63,4 +63,4 @@ print("Delivery Fee: $" + str(float(deliveryCharge)))
 
 # total price post all discounts and charges
 totalPrice = pizzaCost + saladCost + deliveryCharge
-print("Total Cost: $" + str(totalPrice))
+print("Total Amount Due: $" + str(totalPrice))
