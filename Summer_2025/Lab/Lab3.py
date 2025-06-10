@@ -24,9 +24,9 @@ while (next.lower() != "no") and (next.lower() != "n"):
     week3 = int(input("Salesperson " + str(personNum) + " week 3: "))
     week4 = int(input("Salesperson " + str(personNum) + " week 4: "))
 
-    total += (week1+week2+week3+week4)
+    total += float(week1+week2+week3+week4)
 
-    mngBonus += (week1*0.02)+(week2*0.02)+(week3*0.02)+(week4*0.02)
+    mngBonus += float(week1*0.02)+(week2*0.02)+(week3*0.02)+(week4*0.02)
 
     # increase person's number
     allPersons = personNum
@@ -47,9 +47,9 @@ if (next.lower() == "no") or (next.lower() == "n"):
 
 
 # manager bonus
-if (total <= sg):
+if (float(total) <= float(sg)):
     bonus = mngBonus
-elif (total > sg):
-    bonus = total * 0.05
+elif (float(total) > float(sg)):
+    bonus = float(total * 0.05)
 
 print("Mgr. Bonus: $" + str(bonus))
