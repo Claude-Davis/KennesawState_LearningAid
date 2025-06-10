@@ -35,13 +35,14 @@ while (next.lower() != "no") and (next.lower() != "n"):
     # cont?
     next  = str(input("Another salesperson?: "))
 
+# outputs
 if (next.lower() == "no") or (next.lower() == "n"):
     print(" ")
     print("Department of Monthly Sales and Commission")
     print(" ")
 
     print("Number of Employees: " + str(allPersons))
-    print("Dept. of Sales Goal: $" + str(sg))
+    print("Department Sales Goal: $" + str(sg))
     print("Total Sales: $" + str(total))
 
 
