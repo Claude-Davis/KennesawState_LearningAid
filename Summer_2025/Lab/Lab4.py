@@ -24,14 +24,14 @@ def mealCost(brunches, dinners):
     tip = (brunchCost+dinnerCost) * 0.15
     totalMealCost = brunchCost + dinnerCost + tip
     return totalMealCost
-def excursionCost(p, s, h, d):
+def excursionCost(p, s, h, d, peopleNum):
     totalExcCost = 0
     if (p=="y"):
         totalExcCost += 50
     if (s=="y"):
-        totalExcCost += 25
+        totalExcCost += 25 * peopleNum
     if (h=="y"):
-        totalExcCost += 17
+        totalExcCost += 17 * peopleNum
     if (d=="y"):
         totalExcCost += 200
     return totalExcCost
@@ -56,7 +56,7 @@ print(" ")
 #total calculations
 rC = roomCost(nights, room)
 mC = mealCost(brunchNum, dinnerNum)
-eC = excursionCost(picnic, snorkeling, hike, boatDinner)
+eC = excursionCost(picnic, snorkeling, hike, boatDinner, people)
 total = rC + mC + eC
 
 
