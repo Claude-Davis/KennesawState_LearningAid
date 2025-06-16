@@ -12,7 +12,10 @@ tax = 0
 # user input
 income = float(input("What was your total income for this tax year?: "))
 maritalStatus = str(input("Are you married? [y/n]: "))
-maritalYrs = int(input("How long have you been married?: "))
+
+if (maritalStatus == "y"):
+    maritalYrs = int(input("How long have you been married?: "))
+    
 elevation = int(input("Is the elevation of your home address below-1, at-2, or above-3 sea level? [1/2/3]: "))
 
 print(" ")
