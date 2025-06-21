@@ -7,5 +7,5 @@
 # Resources:
 
 
-def is_prime():
-    x
+
+
