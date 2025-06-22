@@ -35,11 +35,19 @@ class Worker:
         self.name = x
 
     def set_birthdate(self, d, m, y):
+        if (d<1):
+            d = 1
+            return False
+        elif (d>31):
+            d = 31
+            return False
+        if (m<1):
+            m = 1
+            return False
+        elif (m>12):
+            m = 12
+            return False
         self.birthdate = str(d)+"/"+str(m)+"/"+str(y)
-        if (1>d>31):
-            return False
-        if (1>m>12):
-            return False
         return True
 
     def get_hours_worked(self):
