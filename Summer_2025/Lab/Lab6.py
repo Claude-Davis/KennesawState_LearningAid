@@ -54,9 +54,9 @@ class Worker:
         return self.hoursTotal
     def add_hours(self, x):
         if (x<=9):
-            self.hours += x
+            self.hoursTotal += x
         elif (x>9):
-            self.hours += 9
+            self.hoursTotal += 9
             self.overtimeTotal += (x-9)
     def get_hours_overtime(self):
         return self.overtimeTotal
