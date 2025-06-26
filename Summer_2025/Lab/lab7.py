@@ -93,4 +93,4 @@ class Worker:
         return self.overtime_hourly_salary
     
     def get_pay(self):
-        return (self.hours_worked * self.hourly_salary) + (self.overtime_hours + self.overtime_hourly_salary)
+        return (self.hours_worked * self.hourly_salary) + (self.overtime_hours * self.overtime_hourly_salary)
