@@ -40,6 +40,25 @@ for a in arr1:
 print(arr)
 
 # sort in descending order
+arr2 = arr
 final_array = []
 
+while len(arr2) >= 1:
+# take the element in the first index (x)
+    e = arr2[0]
+# compare it to the following element (y); if x is less than y, replace x with y
+    for a in arr2:
+        if e<a:
+            e = a
+# compare x to the new/next y
+# cont' these steps until no other number is lower than current saved element
 
+# add this element to new array and remove from original array
+    final_array.append(e)
+    arr2.remove(e)
+    
+# repeat until all elements have been evaluated
+    
+
+
+print(final_array)
