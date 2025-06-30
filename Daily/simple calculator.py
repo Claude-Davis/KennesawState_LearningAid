@@ -11,29 +11,54 @@ print("5. Floor Division\n")
 
 calc_option = input(" ")
 
+
+## ADDITION ##
 if (calc_option == "1") or (str.lower(calc_option) == "addition"):
     print("List all numbers that you want to add. Enter '0' when you are ready to calculate the result.")
-    num = 1 # initialize variable
-    num_array = []
+    numAdd = 1 # initialize variable
+    num_array1 = []
 
     # main loop: addition
+    while numAdd != 0:
+        num = float(input(" "))
+        num_array1.append(num)
+    print(" ") # space break
+    
+    # calculate & display equation
+    addition_equation = ""
+    for n in num_array1:
+        if (n != 0):
+            addition_equation = addition_equation + str(n) + " + "
+        elif (n == 0):
+            addition_equation = addition_equation + "0.0 = "
+    print (addition_equation + str(sum(num_array1)))
+
+
+## SUBTRACTION ##
+if (calc_option == "2") or (str.lower(calc_option) == "subtraction"):
+    print("List all numbers that you want to subtract. Enter '0' when you are ready to calculate the result.")
+    num = 1 # initialize variable
+    num_array2 = []
+
+    # main loop: subtraction
     while num != 0:
         num = float(input(" "))
-        num_array.append(num)
+        num_array2.append(num)
     print(" ") # space break
     
     # display equation
-    for n in num_array:
-        print(str(n) + " + ")
-    
-    print (" 0 = " + str(sum(num_array)))
+    subtraction_equation = ""
+    for n in num_array2:
+        if (n != 0):
+            subtraction_equation = subtraction_equation + str(n) + " - "
+        elif (n == 0):
+            subtraction_equation = subtraction_equation + "0.0 = "
 
+    # calculate equation
+    firstN = num_array2[0]
+    difference = firstN
+    num_array2.remove(firstN)
+    for n in num_array2:
+        difference -= n
 
-
-if (calc_option == 2) or (str.lower(calc_option) == "subtraction"):
-    //
-if (calc_option == 3) or (str.lower(calc_option) == "multiplication"):
-    //
-if (calc_option == 4) or (str.lower(calc_option) == "division"):
-    //
-if (calc_option == 5) or (str.lower(calc_option) == "floor division"):
+    print (subtraction_equation + str(difference))
