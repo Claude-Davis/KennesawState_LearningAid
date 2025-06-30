@@ -20,8 +20,8 @@ if (calc_option == "1") or (str.lower(calc_option) == "addition"):
 
     # main loop: addition
     while numAdd != 0:
-        num = float(input(" "))
-        num_array1.append(num)
+        numAdd = float(input(" "))
+        num_array1.append(numAdd)
     print(" ") # space break
     
     # calculate & display equation
@@ -37,13 +37,13 @@ if (calc_option == "1") or (str.lower(calc_option) == "addition"):
 ## SUBTRACTION ##
 if (calc_option == "2") or (str.lower(calc_option) == "subtraction"):
     print("List all numbers that you want to subtract. Enter '0' when you are ready to calculate the result.")
-    num = 1 # initialize variable
+    numSubtract = 1 # initialize variable
     num_array2 = []
 
     # main loop: subtraction
-    while num != 0:
-        num = float(input(" "))
-        num_array2.append(num)
+    while numSubtract != 0:
+        numSubtract = float(input(" "))
+        num_array2.append(numSubtract)
     print(" ") # space break
     
     # display equation
@@ -62,3 +62,30 @@ if (calc_option == "2") or (str.lower(calc_option) == "subtraction"):
         difference -= n
 
     print (subtraction_equation + str(difference))
+
+
+## MULTIPLICATION ##
+if (calc_option == "3") or (str.lower(calc_option) == "multiplication"):
+    print("List all numbers that you want to multiply. Enter '1' when you are ready to calculate the result.")
+numMultiply = 0
+num_array3 = []
+
+# main loop: multiplication
+while (numMultiply != 1):
+    numMultiply = float(input(" "))
+    num_array3.append(numMultiply)
+
+# display equation
+multiplication_equation = ""
+for n in num_array3:
+    if (n != 1):
+        multiplication_equation = multiplication_equation = str(n) + " x "
+    elif (n == 1):
+        multiplication_equation = multiplication_equation + "x 1 = "
+
+# calculate
+firstNum = num_array3[0]
+product = firstNum
+num_array3.remove(product)
+for n in num_array3:
+    product = product * n
