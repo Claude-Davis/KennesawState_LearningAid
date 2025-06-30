@@ -22,6 +22,8 @@ if (calc_option == "1") or (str.lower(calc_option) == "addition"):
     while numAdd != 0:
         numAdd = float(input(" "))
         num_array1.append(numAdd)
+        if (numAdd == 0):
+            break
     print(" ") # space break
     
     # calculate & display equation
@@ -32,6 +34,7 @@ if (calc_option == "1") or (str.lower(calc_option) == "addition"):
         elif (n == 0):
             addition_equation = addition_equation + "0.0 = "
     print (addition_equation + str(sum(num_array1)))
+  
 
 
 ## SUBTRACTION ##
@@ -67,25 +70,27 @@ if (calc_option == "2") or (str.lower(calc_option) == "subtraction"):
 ## MULTIPLICATION ##
 if (calc_option == "3") or (str.lower(calc_option) == "multiplication"):
     print("List all numbers that you want to multiply. Enter '1' when you are ready to calculate the result.")
-numMultiply = 0
-num_array3 = []
+    numMultiply = 0
+    num_array3 = []
 
-# main loop: multiplication
-while (numMultiply != 1):
-    numMultiply = float(input(" "))
-    num_array3.append(numMultiply)
+    # main loop: multiplication
+    while (numMultiply != 1):
+        numMultiply = float(input(" "))
+        num_array3.append(numMultiply)
 
-# display equation
-multiplication_equation = ""
-for n in num_array3:
-    if (n != 1):
-        multiplication_equation = multiplication_equation = str(n) + " x "
-    elif (n == 1):
-        multiplication_equation = multiplication_equation + "x 1 = "
+    # display equation
+    multiplication_equation = ""
+    for n in num_array3:
+        if (n != 1):
+            multiplication_equation = multiplication_equation + str(n) + " x "
+        elif (n == 1):
+            multiplication_equation = multiplication_equation + "1 = "
 
-# calculate
-firstNum = num_array3[0]
-product = firstNum
-num_array3.remove(product)
-for n in num_array3:
-    product = product * n
+    # calculate
+    firstNum = num_array3[0]
+    product = firstNum
+    num_array3.remove(product)
+    for n in num_array3:
+        product = product * n
+
+    print(multiplication_equation + str(product))
