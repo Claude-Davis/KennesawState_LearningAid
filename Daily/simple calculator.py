@@ -94,3 +94,31 @@ if (calc_option == "3") or (str.lower(calc_option) == "multiplication"):
         product = product * n
 
     print(multiplication_equation + str(product))
+
+## DIVISION ##
+if (calc_option == "4") or (str.lower(calc_option) == "division"):
+    print("List all numbers that you want to divide. Enter '1' when you are ready to clculate the result.")
+    numDivide = 0
+    num_array4 = []
+
+    # main loop: division
+    while (numDivide != 1):
+        numDivide = float(input(" "))
+        num_array4.append(numDivide)
+
+    # display equation
+    division_equation = ""
+    for n in num_array4:
+        if (n!=1):
+            division_equation = division_equation + str(n)  + " / "
+        elif (n==1):
+            division_equation = division_equation + "1 = "
+
+    # calculations
+    firstNumber = num_array4[0]
+    quotient = firstNumber
+    num_array4.remove(firstNumber)
+    for n in num_array4:
+        quotient = quotient / n
+
+    print(division_equation + str(quotient))
