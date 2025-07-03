@@ -7,7 +7,8 @@ print("1. Addition")
 print("2. Subtraction")
 print("3. Multiplication")
 print("4. Division")
-print("5. Floor Division\n")
+print("5. Floor Division")
+print("6. Modulo\n")
 
 calc_option = input(" ")
 
@@ -95,6 +96,7 @@ if (calc_option == "3") or (str.lower(calc_option) == "multiplication"):
 
     print(multiplication_equation + str(product))
 
+
 ## DIVISION ##
 if (calc_option == "4") or (str.lower(calc_option) == "division"):
     print("List all numbers that you want to divide. Enter '1' when you are ready to clculate the result.")
@@ -122,3 +124,34 @@ if (calc_option == "4") or (str.lower(calc_option) == "division"):
         quotient = quotient / n
 
     print(division_equation + str(quotient))
+
+
+
+## FLOOR DIVISION ##
+if (calc_option == "5") or (str.lower(calc_option) == "floor division"):
+    print("List two (2) numbers that you want to divide.")
+
+    num0 = float(input(" "))
+    num1 = float(input(" "))
+
+    # calculations
+    quotient1 = num0 // num1
+
+    # display equation
+    floorDiv_equation = str(num0) + " // " + str(num1) + " = " + str(quotient1)
+    print(floorDiv_equation)
+
+
+## MODULO ##
+if (calc_option == "5") or (str.lower(calc_option) == "floor division"):
+    print("List two (2) numbers that you want to divide.")
+
+    num0 = float(input(" "))
+    num1 = float(input(" "))
+
+    # calculations
+    quotient1 = num0 // num1
+
+    # display equation
+    floorDiv_equation = str(num0) + " // " + str(num1) + " = " + str(quotient1)
+    print(floorDiv_equation)
