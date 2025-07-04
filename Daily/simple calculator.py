@@ -99,7 +99,7 @@ if (calc_option == "3") or (str.lower(calc_option) == "multiplication"):
 
 ## DIVISION ##
 if (calc_option == "4") or (str.lower(calc_option) == "division"):
-    print("List all numbers that you want to divide. Enter '1' when you are ready to clculate the result.")
+    print("List all numbers that you want to divide. Enter '1' when you are ready to calculate the result.")
     numDivide = 0
     num_array4 = []
 
@@ -129,29 +129,44 @@ if (calc_option == "4") or (str.lower(calc_option) == "division"):
 
 ## FLOOR DIVISION ##
 if (calc_option == "5") or (str.lower(calc_option) == "floor division"):
-    print("List two (2) numbers that you want to divide.")
+    print("List all numbers that you want to divide. Enter '1' when you are ready to calculate the result.")
 
-    num0 = float(input(" "))
-    num1 = float(input(" "))
+    numDivide = 0
+    num_array5 = []
 
-    # calculations
-    quotient1 = num0 // num1
+    # main loop: division
+    while (numDivide != 1):
+        numDivide = float(input(" "))
+        num_array5.append(numDivide)
 
     # display equation
-    floorDiv_equation = str(num0) + " // " + str(num1) + " = " + str(quotient1)
-    print(floorDiv_equation)
+    floorDiv_equation = ""
+    for n in num_array4:
+        if (n!=1):
+            floorDiv_equation = floorDiv_equation + str(n)  + " // "
+        elif (n==1):
+            floorDiv_equation = floorDiv_equation + "1 = "
+
+    # calculations
+    firstNumber = num_array5[0]
+    quotient = firstNumber
+    num_array5.remove(firstNumber)
+    for n in num_array5:
+        quotient1 = quotient1 // n
+
+    print(division_equation + str(quotient1))
 
 
 ## MODULO ##
-if (calc_option == "5") or (str.lower(calc_option) == "floor division"):
-    print("List two (2) numbers that you want to divide.")
+if (calc_option == "6") or (str.lower(calc_option) == "modulo"):
+    print("List two (2) numbers that you want to find the modulo of.")
 
-    num0 = float(input(" "))
-    num1 = float(input(" "))
+    num2 = float(input(" "))
+    num3 = float(input(" "))
 
     # calculations
-    quotient1 = num0 // num1
+    quotient2 = num2 % num3
 
     # display equation
-    floorDiv_equation = str(num0) + " // " + str(num1) + " = " + str(quotient1)
-    print(floorDiv_equation)
+    modulo_equation = str(num2) + " % " + str(num3) + " = " + str(quotient2)
+    print(modulo_equation)
