@@ -37,26 +37,33 @@ def specialChar_check(contrasena):
 
 
 
-password = input("Password: ")
-lower_case_char = lowerCasing_check(password)
-upper_case_char = capsCasing_check(password)
-number_present = number_check(password)
-specialChar_present = specialChar_check(password)
 
-if (len(password) < 9):  # verify length of password
-    print("Invalid Password")
 
-elif (len(password)>=9):
-    if ((not lower_case_char) or (not upper_case_char)):   # verify presence of lower and upper case letters
+cont = 0
+
+while (cont != 1):
+    password = input("Password: ")
+
+    lower_case_char = lowerCasing_check(password)
+    upper_case_char = capsCasing_check(password)
+    number_present = number_check(password)
+    specialChar_present = specialChar_check(password)
+
+    if (len(password) < 9):  # verify length of password
         print("Invalid Password")
 
-    elif (lower_case_char and upper_case_char):  
-        if(not number_present):     # very presence of a number
+    elif (len(password)>=9):
+        if ((not lower_case_char) or (not upper_case_char)):   # verify presence of lower and upper case letters
             print("Invalid Password")
 
-        elif (number_present):
-            if (not specialChar_present):   # verify presence of a special character
+        elif (lower_case_char and upper_case_char):  
+            if(not number_present):     # very presence of a number
                 print("Invalid Password")
 
-            elif (specialChar_present):
-                print("Valid Password")
+            elif (number_present):
+                if (not specialChar_present):   # verify presence of a special character
+                    print("Invalid Password")
+
+                elif (specialChar_present):
+                    print("Valid Password")
+                    cont = 1
