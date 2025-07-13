@@ -12,7 +12,7 @@ def create_file():
 
 def add_user(name):
     with open("users.txt", "a") as user_file:
-        user_file.write(name)
+        user_file.write(name + "/n")
 
 def update_user(oldUser, newUser):
     with open("users.txt", "r") as user_file:     # opens and reads the file (ln 18-19)
