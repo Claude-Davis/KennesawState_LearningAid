@@ -1,8 +1,8 @@
 Learn to...
  - concisely define the following key terms:
         - join
-        - equi-join
         - natural join 
+        - equi-join
         - outer join
         - inner join
         - correlated subquery
